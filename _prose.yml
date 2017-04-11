@@ -2,7 +2,7 @@ prose:
   rooturl: 'site/content'
   media: 'site/static/images'
   metadata:
-    content/post:
+    site/content/post:
       - name: "title"
         field:
           element: "text"
@@ -36,7 +36,7 @@ prose:
             - name: "Blog"
               value: "blog"
           alterable: True
-    static:
+    site/static:
       - name: "url"
         field:
           element: "text"

@@ -1,6 +1,6 @@
 prose:
-  rooturl: 'content'
-  media: 'static/images'
+  rooturl: 'site/content'
+  media: 'site/static/images'
   metadata:
     content/post:
       - name: "title"

@@ -1,0 +1,34 @@
+{{ define "main" }}
+  {{ $paginator := .Paginate (where .Site.Pages "Type" "article") }}
+  {{ range $paginator.Pages }}
+    {{ .Render "summary"}}
+  {{ end }}
+  {{ if gt $paginator.TotalPages 1 }}
+  <nav class="Pagination">
+      <ul>
+          {{ with $paginator.First }}
+          <li>
+              <a href="{{ .Url }}" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+          </li>
+          {{ end }}
+          <li {{ if not $paginator.HasPrev }}class="disabled"{{ end }}>
+              <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.Url }}{{ end }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+          </li>
+          {{ range $paginator.Pagers }}
+          <li {{ if eq . $paginator }}class="active"{{ end }}><a href="{{ .Url }}">{{ .PageNumber }}</a></li>
+          {{ end }}
+          <li {{ if not $paginator.HasNext }}class="disabled"{{ end }}>
+              <a href="{{ if $paginator.HasNext }}{{ $paginator.Next.Url }}{{ end }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+          </li>
+          {{ with $paginator.Last }}
+          <li>
+              <a href="{{ .Url }}" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+          </li>
+          {{ end }}
+      </ul>
+      <p class="summary">
+          Page {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }} ({{ $paginator.TotalNumberOfElements }} total)
+      </p>
+  </nav>
+  {{ end }}
+{{ end }}

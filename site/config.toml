@@ -1,3 +1,16 @@
 baseurl = "/"
-languageCode = "en-us"
+languageCode = "en"
+googleAnalytics = "UA-123-45"
+buildDrafts = true
 title = "Camille Rabatel Photography"
+
+[params]
+  description = "Camille Rabatel's personal website about photography"
+  author = "Camille Rabatel"
+
+[taxonomies]
+  tag = "tags"
+
+[permalinks]
+  article = "/article/:year/:month/:slug/"
+  gallery = "/gallery/:slug/"

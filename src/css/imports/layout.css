@@ -1,0 +1,39 @@
+.Page {
+  color: #324b5a;
+  background: #eee;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+.Header {
+  background: var(--color-primary);
+  grid-area: header;
+}
+
+.Main {
+  grid-area: main;
+  background: #fff;
+  margin: 0 auto;
+  padding: 15px;
+
+  @media (--lg-viewport) {
+    width: 900px;
+    max-width: 100%;
+  }
+
+  @media (--xl-viewport) {
+    width: 1150px;
+  }
+}
+
+.Footer {
+  grid-area: footer;
+  background: #fff;
+}

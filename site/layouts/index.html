@@ -1,5 +1,7 @@
-{{ partial "header" . }}
+{{ define "main" }}
+  {{ .Content }}
 
-<h1>Hugo with Gulp, PostCSS and Webpack</h1>
-
-{{ partial "footer" . }}
+	{{ range (where .Site.Pages "Type" "article") }}
+		{{ .Render "summary"}}
+	{{ end }}
+{{ end }}

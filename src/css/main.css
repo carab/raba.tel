@@ -1,1 +1,6 @@
+@import "imports/fonts.css";
+@import "imports/vars.css";
+
 @import "imports/reset.css";
+@import "imports/base.css";
+@import "imports/layout.css";

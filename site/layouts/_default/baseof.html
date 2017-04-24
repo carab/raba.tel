@@ -20,13 +20,21 @@
       </main>
 
       <header class="Header">
-        <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-        <nav>
+        <div class="Header_logo">
+          <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+        </div>
+        <nav class="Header_nav">
             {{ $currentPage := . }}
-    				{{ range .Site.Menus.main }}
-    				  <a href="{{ .URL | relURL }}"{{ if (or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .)) }} class="active"{{ end }}>{{ .Name }}</a>
+    				{{ range $index, $element := .Site.Menus.main }}
+              {{ if (ne $index 0) }}
+                  &bullet;
+              {{ end }}
+    				  <a href="{{ $element.URL | relURL }}"{{ if (or ($currentPage.IsMenuCurrent "main" $element) ($currentPage.HasMenuCurrent "main" $element)) }} class="active"{{ end }}>{{ $element.Name }}</a>
     				{{ end }}
     		</nav>
+        <div class="Header_socials">
+          F T F 4
+        </div>
       </header>
 
       <footer class="Footer">

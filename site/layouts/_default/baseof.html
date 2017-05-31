@@ -21,7 +21,10 @@
 
       <header class="Header">
         <div class="Header_logo">
-          <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+          <a href="{{ .Site.BaseURL }}">
+				    {{ partial "icon-camera.html" . }}
+						{{ .Site.Title }}
+					</a>
         </div>
         <nav class="Header_nav">
             {{ $currentPage := . }}

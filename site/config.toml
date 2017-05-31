@@ -2,9 +2,13 @@ baseurl = "/"
 languageCode = "en"
 googleAnalytics = "UA-123-45"
 buildDrafts = true
-title = "Camille Rabatel Photography"
+title = "Camille Rabatel"
+
+[blackfriday]
+  extensions = ["hardLineBreak"]
 
 [params]
+  formSpreeEmail = "camille@raba.tel"
   description = "Camille Rabatel's personal website about photography"
   author = "Camille Rabatel"
 

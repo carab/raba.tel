@@ -5,6 +5,8 @@ date: 2017-03-08T15:42:12+02:00
 slug: comiccon-brussels-2017
 ---
 
+===> ENLEVER les "you", c'est pas un cours mais un rappel d'expérience.
+
 Two major geek events just happened within two weeks in Brussels : the Comic Con from the 24th to the 26th february, and the Made In Asia from the 3rd to the 5th march.
 
 I have already attended to the MIA 2 times before, which seems to be the one big event in Belgium. I really enjoyed the ambiance, the activities, the people and most of all, the sublime cosplayers you can find at each corners of the show.

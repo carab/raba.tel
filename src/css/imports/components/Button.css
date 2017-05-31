@@ -1,0 +1,24 @@
+.Button {
+  display: inline-block;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  padding: 5px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 200ms ease all;
+}
+
+.Button-primary {
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  color: #fff;
+  text-transform: uppercase;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: #fff;
+    color: var(--color-primary);
+  }
+}

@@ -1,0 +1,11 @@
+<form class="Form" method="POST" action="http://formspree.io/{{ .Site.Params.formSpreeEmail }}">
+  <p>
+    <input type="email" name="email" placeholder="Your email">
+  </p>
+  <p>
+    <textarea name="message" placeholder="Your message"></textarea>
+  </p>
+  <footer>
+    <button type="submit" class="Button Button-primary">Send</button>
+  </footer>
+</form>

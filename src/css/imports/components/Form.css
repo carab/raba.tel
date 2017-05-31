@@ -1,0 +1,32 @@
+.Form {
+  & input,
+  & textarea {
+    border: 1px solid #eee;
+    color: #aaa;
+    padding: 5px 10px;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    width: 100%;
+    transition: 200ms all ease;
+
+    &:focus,
+    &:active {
+      color: var(--color-secondary);
+      outline: 0;
+      border-color: var(--color-primary);
+    }
+
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+
+  & textarea {
+    min-height: 10em;
+  }
+
+  & footer {
+    text-align: center;
+  }
+}

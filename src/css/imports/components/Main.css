@@ -1,0 +1,14 @@
+.Main {
+  grid-area: main;
+  margin: 0 auto;
+  padding: 15px;
+
+  @media (--lg-viewport) {
+    width: 900px;
+    max-width: 100%;
+  }
+
+  @media (--xl-viewport) {
+    width: 1150px;
+  }
+}

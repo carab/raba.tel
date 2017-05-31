@@ -3,4 +3,14 @@
 
 @import "imports/reset.css";
 @import "imports/base.css";
-@import "imports/layout.css";
+
+@import "imports/components/Button.css";
+@import "imports/components/Form.css";
+
+@import "imports/components/Page.css";
+@import "imports/components/Header.css";
+@import "imports/components/Main.css";
+@import "imports/components/Footer.css";
+@import "imports/components/Container.css";
+@import "imports/components/About.css";
+@import "imports/components/Article.css";

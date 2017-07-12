@@ -14,9 +14,7 @@ I have been interested by photography since my younger years, but I really start
 
 Since then, I have been interested by something smaller and am now shooting exclusively with my Fuji X-T1.
 
-As an enthusiast photographer, I am currently not doing professional work, mainly because I still have a lot to learn.
-
-Thus, you will find on this website my favorite images from various types of photography, along some articles of my different experiences.
+You will find on this website my favorite images from various types of photography, along some articles of my different experiences.
 
 Please do not hesitate to comment and give me some piece of advice, I'm all ears !
 You can also use the contact form below if needed.

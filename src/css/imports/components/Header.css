@@ -1,7 +1,6 @@
 
 .Header {
-  background: var(--color-secondary);
-  color: #fff;
+  background: var(--color-opposite);
   grid-area: header;
   display: flex;
   height: 48px;
@@ -10,7 +9,7 @@
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 0px -2px 15px 0px var(--color-secondary);
+  //box-shadow: 0px -2px 5px 0px var(--color-secondary);
 
   & a {
     border: 0;
@@ -37,19 +36,42 @@
 .Header_nav {
   margin-left: auto;
   margin-right: auto;
+}
+
+.Header_socials {
+  padding-right: 20px;
+}
+
+.Navigation {
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
 
   & a {
     color: inherit;
     text-decoration: none;
     position: relative;
     padding: 0 5px;
+    display: inline-block;
+    white-space: nowrap;
 
     &:after {
       content: '';
       display: block;
       position: absolute;
+      z-index: 2;
       left: 0;
       right: 100%;
+      top: 100%;
       height: 1px;
       background: currentColor;
       transition: 200ms ease right;
@@ -57,13 +79,32 @@
 
     &:hover,
     &:focus {
+      background: none;
+      color: inherit;
+
       &:after {
         right: 50%;
       }
     }
   }
-}
 
-.Header_socials {
-  padding-right: 20px;
+  & [aria-hidden] {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    background: var(--color-opposite);
+
+    & a {
+      font-size: 0.8em;
+    }
+  }
+
+  & [aria-hidden="true"] {
+    display: none;
+  }
+
+  & [aria-hidden="false"] {
+    display: block;
+  }
 }

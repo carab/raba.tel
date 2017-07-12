@@ -19,30 +19,9 @@
         {{ block "main" . }}{{ end }}
       </main>
 
-      <header class="Header">
-        <div class="Header_logo">
-          <a href="{{ .Site.BaseURL }}">
-				    {{ partial "icon-camera.html" . }}
-						{{ .Site.Title }}
-					</a>
-        </div>
-        <nav class="Header_nav">
-            {{ $currentPage := . }}
-    				{{ range $index, $element := .Site.Menus.main }}
-              {{ if (ne $index 0) }}
-                  &bullet;
-              {{ end }}
-    				  <a href="{{ $element.URL | relURL }}"{{ if (or ($currentPage.IsMenuCurrent "main" $element) ($currentPage.HasMenuCurrent "main" $element)) }} class="active"{{ end }}>{{ $element.Name }}</a>
-    				{{ end }}
-    		</nav>
-        <div class="Header_socials">
-          F T F 4
-        </div>
-      </header>
+	    {{ partial "header.html" . }}
 
-      <footer class="Footer">
-        &copy; {{ now.Year }} - {{ .Site.Title }}
-      </footer>
+	    {{ partial "footer.html" . }}
     </div>
 
     <script src="{{ .Site.BaseURL }}app.js"></script>

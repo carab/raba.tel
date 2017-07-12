@@ -1,0 +1,28 @@
+<nav role="navigation" aria-label="Main navigation" class="Navigation">
+  <ul>
+    {{ $currentPage := . }}
+    {{ range $index, $element := .Site.Menus.main }}
+      {{ if (ne $index 0) }}
+          <li role="separator">&bullet;</li>
+      {{ end }}
+      <li>
+        {{ if .HasChildren }}
+          <a href="{{ $element.URL | relURL }}" aria-haspopup="true">
+            {{ $element.Name }}
+          </a>
+          <ul aria-hidden="true" aria-label="submenu">
+            {{ range $element.Children }}
+              <li>
+                <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ else }}
+          <a href="{{ $element.URL | relURL }}">
+            {{ $element.Name }}
+          </a>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</nav>

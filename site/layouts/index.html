@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ .Content }}
 
-	{{ range (where .Site.Pages "Type" "article") }}
+	{{ range (where .Site.RegularPages "Type" "article") }}
 		{{ .Render "summary"}}
 	{{ end }}
 {{ end }}

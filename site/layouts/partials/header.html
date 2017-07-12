@@ -1,0 +1,16 @@
+<header class="Header">
+  <div class="Header_logo">
+    <a href="{{ .Site.BaseURL }}">
+	    {{ partial "icon-camera.html" . }}
+			{{ .Site.Title }}
+		</a>
+  </div>
+  <div class="Header_nav">
+    {{ partial "navigation.html" . }}
+	</div>
+  <div class="Header_socials">
+    <a href="" title="Facebook"><i class="fa fa-facebook-official"></i></a>
+    <a href="" title="500px"><i class="fa fa-500px"></i></a>
+    <a href="" title="Instagram"><i class="fa fa-instagram"></i></a>
+  </div>
+</header>

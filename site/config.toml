@@ -3,6 +3,7 @@ languageCode = "en"
 googleAnalytics = "UA-123-45"
 buildDrafts = true
 title = "Camille Rabatel"
+newContentEditor = "atom"
 
 [blackfriday]
   extensions = ["hardLineBreak"]
@@ -16,5 +17,5 @@ title = "Camille Rabatel"
   tag = "tags"
 
 [permalinks]
-  article = "/article/:year/:month/:slug/"
-  gallery = "/gallery/:slug/"
+  article = "/:section/:slug"
+  gallery = "/:sections/:slug"

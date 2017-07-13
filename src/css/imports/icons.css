@@ -1,1 +1,14 @@
-@import "../../../node_modules/font-awesome/css/font-awesome.css";
+.Icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: middle;
+  }
+}

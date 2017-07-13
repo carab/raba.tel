@@ -1,0 +1,66 @@
+.Navigation {
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    padding: 0 5px;
+    display: inline-block;
+    white-space: nowrap;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 100%;
+      top: 100%;
+      height: 1px;
+      background: currentColor;
+      transition: 200ms ease right;
+    }
+
+    &:hover,
+    &:focus {
+      background: none;
+      color: inherit;
+
+      &:after {
+        right: 0%;
+      }
+    }
+  }
+
+  & [aria-hidden] {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    background: var(--color-opposite);
+
+    & a {
+      font-size: 0.8em;
+    }
+  }
+
+  & [aria-hidden="true"] {
+    display: none;
+  }
+
+  & [aria-hidden="false"] {
+    display: block;
+  }
+}

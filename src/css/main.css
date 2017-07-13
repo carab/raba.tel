@@ -10,8 +10,11 @@
 
 @import "imports/components/Page.css";
 @import "imports/components/Header.css";
+@import "imports/components/Navigation.css";
 @import "imports/components/Main.css";
 @import "imports/components/Footer.css";
 @import "imports/components/Container.css";
 @import "imports/components/About.css";
+@import "imports/components/PageTitle.css";
 @import "imports/components/Article.css";
+@import "imports/components/Gallery.css";

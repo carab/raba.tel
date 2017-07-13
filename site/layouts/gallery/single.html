@@ -1,3 +1,18 @@
 {{ define "main" }}
-  gallery
+  <div class="PageTitle">
+    <h1>{{ .Title }}</h1>
+  </div>
+  <div class="Gallery">
+    <div class="Gallery_content">
+      {{ .Content }}
+    </div>
+    <div class="Gallery_images">
+      {{ $pathUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName) "") }}
+      {{ $path := (delimit (slice "/static" $pathUrl) "") }}
+      {{- $files := readDir $path -}}
+      {{- range $files }}
+        <img class="Gallery_image" src="{{ $pathUrl }}{{ .Name | relURL }}" alt="">
+      {{- end }}
+    </div>
+  </div>
 {{ end }}

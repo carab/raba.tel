@@ -1,3 +1,10 @@
 {{ define "main" }}
-  galleries
+  <div class="PageTitle">
+    <h1>{{ .Title }}</h1>
+  </div>
+  <div class="GalleryList">
+  	{{ range .Pages }}
+  		{{ .Render "thumbnail" }}
+  	{{ end }}
+  </div>
 {{ end }}

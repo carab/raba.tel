@@ -1,0 +1,11 @@
+<a href="{{ .Permalink }}" class="GalleryThumbnail">
+  {{ $title := .Title }}
+  <h2 class="GalleryThumbnail_title">{{ $title }}</h2>
+
+  {{ $pathUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName) "") }}
+  {{ $path := (delimit (slice "/static" $pathUrl) "") }}
+  {{- $files := readDir $path -}}
+  {{- range first 1 $files }}
+    <img class="GalleryThumbnail_image" src="{{ $pathUrl }}{{ .Name | relURL }}" alt="{{ $title }}">
+  {{- end }}
+</a>

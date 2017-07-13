@@ -1,13 +1,13 @@
 <section class="Article Article-summary" itemscope itemtype="http://schema.org/Article">
-		<h2 class="Article_title" itemprop="name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-		<time class="Article_date" itemprop="date">{{ .Date.Format "02/01/2006 15:04" }}</time>
-		{{ range .Params.tags }}
-		  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+	<h2 class="Article_title" itemprop="name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+	<time class="Article_date" itemprop="date">{{ .Date.Format "02/01/2006 15:04" }}</time>
+	{{ range .Params.tags }}
+	  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+	{{ end }}
+	<article class="Article_content" itemprop="articleBody">
+		{{ .Summary }}
+		{{ if .Truncated }}
+			<a class="Article_more" href="{{ .Permalink }}">Read more...</a>
 		{{ end }}
-		<article class="Article_content" itemprop="articleBody">
-			{{ .Summary }}
-			{{ if .Truncated }}
-				<a class="Article_more" href="{{ .Permalink }}">Read more...</a>
-			{{ end }}
-		</article>
-	</section>
+	</article>
+</section>

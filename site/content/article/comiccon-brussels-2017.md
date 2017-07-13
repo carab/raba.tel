@@ -2,7 +2,6 @@
 draft: true
 title:  Comic Con Brussels 2017
 date: 2017-03-08T15:42:12+02:00
-slug: comiccon-brussels-2017
 ---
 
 ===> ENLEVER les "you", c'est pas un cours mais un rappel d'expérience.

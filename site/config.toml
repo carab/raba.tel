@@ -4,6 +4,7 @@ googleAnalytics = "UA-123-45"
 buildDrafts = true
 title = "Camille Rabatel"
 newContentEditor = "atom"
+relativeURLs = true
 
 [blackfriday]
   extensions = ["hardLineBreak"]

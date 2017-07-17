@@ -12,6 +12,11 @@
 	  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css"/>
     {{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}favicon-16x16.png">
+		<link rel="manifest" href="{{ .Site.BaseURL }}manifest.json">
+		<meta name="theme-color" content="#ffffff">
   </head>
   <body>
     <div class="Page">

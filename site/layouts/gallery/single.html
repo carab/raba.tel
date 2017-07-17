@@ -11,7 +11,8 @@
       {{ $path := (delimit (slice "/static" $pathUrl) "") }}
       {{- $files := readDir $path -}}
       {{- range $files }}
-        <img class="Gallery_image" src="{{ $pathUrl }}{{ .Name | relURL }}" alt="">
+      {{ $id := replace .Name ".jpg" "" }}
+        <a class="Gallery_image" href="#photo-{{ $id }}"><img id="photo-{{ $id }}" src="{{ $pathUrl }}{{ .Name | relURL }}" alt=""></a>
       {{- end }}
     </div>
   </div>

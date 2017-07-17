@@ -2,7 +2,7 @@
   <div class="Header_bar">
     <div class="Header_logo">
       <a href="{{ .Site.BaseURL }}">
-  	    {{ partial "icon-camera.html" . }}
+        {{ readFile "/static/icons/camera.svg" | safeHTML }}
   			{{ .Site.Title }}
   		</a>
     </div>
@@ -10,21 +10,21 @@
       {{ partial "navigation.html" . }}
   	</div>
     <div class="Header_socials">
-      <a href="" title="Facebook">
-        <i class="Icon Icon-facebook">
-          <svg viewBox="0 0 56.693 56.693" xmlns="http://www.w3.org/2000/svg"><path d="M40.43 21.74h-7.645v-5.015c0-1.883 1.248-2.322 2.127-2.322h5.395V6.125l-7.43-.03c-8.248 0-10.125 6.175-10.125 10.126v5.52h-4.77v8.53h4.77v24.136h10.033V30.27h6.77l.875-8.53z"/></svg>
-        </i>
-      </a>
-      <a href="" title="Twitter">
-        <i class="Icon Icon-twitter">
-          <svg version="1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M31.993 6.077c-1.177.523-2.44.876-3.77 1.033 1.355-.812 2.396-2.098 2.887-3.63-1.27.75-2.673 1.3-4.168 1.592C25.744 3.797 24.038 3 22.15 3c-3.626 0-6.563 2.938-6.563 6.563 0 .514.057 1.016.17 1.496C10.3 10.784 5.464 8.17 2.226 4.2c-.564.97-.888 2.098-.888 3.3 0 2.28 1.158 4.287 2.918 5.465-1.075-.035-2.087-.33-2.972-.82v.08c0 3.182 2.26 5.835 5.264 6.438-.55.15-1.13.23-1.73.23-.423 0-.833-.04-1.233-.117.834 2.606 3.26 4.504 6.13 4.558-2.245 1.76-5.075 2.81-8.15 2.81-.53 0-1.053-.03-1.566-.09C2.906 27.913 6.356 29 10.063 29c12.072 0 18.675-10 18.675-18.675 0-.284-.008-.568-.02-.85 1.283-.925 2.395-2.08 3.276-3.398z"/></svg>
-        </i>
-      </a>
-      <a href="" title="Instagram">
-        <i class="Icon Icon-instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.7 56.7"><path d="M28.2 16.7c-7 0-12.8 5.7-12.8 12.8s5.7 12.8 12.8 12.8S41 36.5 41 29.5s-5.8-12.8-12.8-12.8zm0 21c-4.5 0-8.2-3.7-8.2-8.2s3.7-8.2 8.2-8.2 8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2z"/><circle cx="41.5" cy="16.4" r="2.9"/><path d="M49 8.9c-2.6-2.7-6.3-4.1-10.5-4.1H17.9c-8.7 0-14.5 5.8-14.5 14.5v20.5c0 4.3 1.4 8 4.2 10.7 2.7 2.6 6.3 3.9 10.4 3.9h20.4c4.3 0 7.9-1.4 10.5-3.9 2.7-2.6 4.1-6.3 4.1-10.6V19.3c0-4.2-1.4-7.8-4-10.4zm-.4 31c0 3.1-1.1 5.6-2.9 7.3s-4.3 2.6-7.3 2.6H18c-3 0-5.5-.9-7.3-2.6C8.9 45.4 8 42.9 8 39.8V19.3c0-3 .9-5.5 2.7-7.3 1.7-1.7 4.3-2.6 7.3-2.6h20.6c3 0 5.5.9 7.3 2.7 1.7 1.8 2.7 4.3 2.7 7.2v20.6z"/></svg>
-        </i>
-      </a>
+      {{ with .Site.Params.facebookUrl }}
+        <a href="{{ . }}" title="Facebook">
+          {{ partial "icon.html" "facebook" }}
+        </a>
+      {{ end }}
+      {{ with .Site.Params.twitterUrl }}
+        <a href="{{ . }}" title="Twitter">
+          {{ partial "icon.html" "twitter" }}
+        </a>
+      {{ end }}
+      {{ with .Site.Params.instagramUrl }}
+        <a href="{{ . }}" title="Instagram">
+          {{ partial "icon.html" "instagram" }}
+        </a>
+      {{ end }}
     </div>
   </div>
 </header>

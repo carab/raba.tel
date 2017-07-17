@@ -57,7 +57,7 @@
 }
 
 .Gallery {
-  
+
 }
 
 .Gallery_images {
@@ -69,7 +69,24 @@
 
   & > * {
     max-width: 33.33%;
-    max-height: 30rem;
     padding: 5px;
+  }
+}
+
+.Gallery_image {
+  display: block;
+  border: 0;
+  cursor: nesw-resize;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    background: none;
+
+  }
+
+  & img {
+    display: block;
+    max-height: 30rem;
   }
 }

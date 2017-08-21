@@ -7,10 +7,11 @@
     "hugo": "gulp hugo",
     "build": "gulp build",
     "build-preview": "gulp build-preview",
+    "photos": "gulp photo:preview && gulp photo:thumbnail",
     "start": "gulp server",
     "lint": "eslint src"
   },
-  "author": "",
+  "author": "Camille Rabatel",
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^6.3.7",
@@ -33,6 +34,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-postcss": "^6.1.1",
+    "gulp-responsive": "^2.7.1",
     "gulp-util": "^3.0.7",
     "imports-loader": "^0.6.5",
     "normalize.css": "^6.0.0",
@@ -42,5 +44,8 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "whatwg-fetch": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp-changed": "^3.1.0"
   }
 }

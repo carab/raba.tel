@@ -5,13 +5,15 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 2;
   //box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, 0, 0);
 
   &:after {
     content: "";
     position: absolute;
     z-index: -1;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
     bottom: 0px;
     width: 80%;
     height: 50%;
@@ -93,14 +95,15 @@
 
   & a {
     display: block;
-    margin-left: 10px;
+    margin-left: 5px;
     border-radius: 50%;
-    padding: 3px;
+    padding: 6px;
+    transition: 200ms ease all;
 
     &:hover,
     &:focus {
-      color: var(--color-opposite);
-      background: var(--color-primary);
+      color: inherit;
+      background: rgba(0, 0, 0, 0.08);
     }
   }
 

@@ -1,7 +1,7 @@
 baseurl = "/"
 languageCode = "en"
-googleAnalytics = "UA-123-45"
-buildDrafts = true
+googleAnalytics = "UA-78711157-2"
+buildDrafts = false
 title = "Camille Rabatel"
 newContentEditor = "atom"
 relativeURLs = true

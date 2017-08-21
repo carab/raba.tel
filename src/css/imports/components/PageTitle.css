@@ -1,13 +1,14 @@
 .PageTitle {
   font-size: 2rem;
   text-align: center;
-  padding: 1.5em;
+  padding: 2em;
 
   & h1 {
     display: inline-block;
     position: relative;
     padding: 0;
     margin: 0;
+    line-height: 1;
     text-transform: uppercase;
 
     &:before,

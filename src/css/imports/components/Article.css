@@ -5,4 +5,9 @@
 .Article_date {
   color: #ddd;
   font-size: 1.4rem;
+  display: block;
+}
+
+.Article_content {
+  text-align: justify;
 }

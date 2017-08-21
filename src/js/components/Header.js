@@ -1,5 +1,3 @@
-import 'blissfuljs';
-
 $.ready().then(function() {
   const header = $('.Header');
 

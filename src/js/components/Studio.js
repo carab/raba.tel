@@ -1,10 +1,13 @@
-import 'blissfuljs';
+const TIMEOUT_ONLOAD = 500;
+const HAS_HISTORY = (window.history && window.history.pushState);
 
 class Studio {
   constructor() {
     const studio = $('.Studio');
 
     this.dom = {
+      window: window,
+      document: document,
       studio: studio,
       image: $('.Studio_image', studio),
       close: $('.Studio_close', studio),
@@ -12,40 +15,51 @@ class Studio {
       next: $('.Studio_next', studio),
     },
 
-    this.images = $$('img[id]');
+    this.images = $$('[href^="#"][data-trigger="studio"] img[id]');
     this.currentIndex = undefined;
 
     this.attach();
+
+    setTimeout(() => {
+      this.handle(this.dom.window.location.hash);
+    }, TIMEOUT_ONLOAD);
   }
 
   attach() {
-    window.addEventListener('hashchange', () => {
-      const hash = window.location.hash;
+    this.dom.window.addEventListener('click', (event) => {
+      const link = event.target.closest('[href^="#"][data-trigger="studio"]');
 
-      if (hash.length > 1) {
-        const targetImage = $('img' + hash);
-
-        if (targetImage) {
-          this.images.forEach((image, index) => {
-            if (targetImage.id == image.id) {
-              this.currentIndex = index;
-            }
-          });
-
-          this.open();
-        }
+      if (link != null) {
+        event.preventDefault();
+        const hash = link.getAttribute('href');
+        this.handle(hash);
       }
     });
 
-    document.addEventListener('keyup', (event) => {
+    if (HAS_HISTORY) {
+      this.dom.window.addEventListener('popstate', (event) => {
+        const {hash} = this.dom.window.location;
+        this.handle(hash);
+      });
+    } else {
+      this.dom.window.addEventListener('hashchange', (event) => {
+        const {hash} = this.dom.window.location;
+        this.handle(hash);
+      });
+    }
+
+    this.dom.document.addEventListener('keyup', (event) => {
+      // Escape
       if (event.keyCode == 27) {
         this.close();
       }
 
+      // Left arrow
       if (event.keyCode == 37) {
         this.previous();
       }
 
+      // Right arrow
       if (event.keyCode == 39) {
         this.next();
       }
@@ -70,9 +84,34 @@ class Studio {
     });
   }
 
+  handle(hash) {
+    const {window} = this.dom;
+
+    if (hash.length > 1) {
+      const targetImage = $('[href^="#"][data-trigger="studio"] img' + hash);
+
+      if (targetImage) {
+        this.show(targetImage);
+        return;
+      }
+    }
+
+    if (this.currentIndex != undefined) {
+      this.close();
+    }
+  }
+
   close() {
-    this.dom.studio.setAttribute('aria-hidden', 'true');
-    window.location.hash = '';
+    const {window, studio} = this.dom;
+
+    studio.setAttribute('aria-hidden', 'true');
+
+    if (HAS_HISTORY) {
+      window.history.pushState('', '', window.location.pathname)
+    } else {
+      window.location.hash = '';
+    }
+
     this.currentIndex = undefined;
   }
 
@@ -80,7 +119,7 @@ class Studio {
     const currentImage = this.images[this.currentIndex];
 
     if (currentImage) {
-      this.dom.image.src = currentImage.src;
+      this.dom.image.src = currentImage.getAttribute('data-src-full');
       this.dom.image.alt = currentImage.alt;
       this.dom.studio.setAttribute('aria-hidden', 'false');
 
@@ -115,7 +154,24 @@ class Studio {
   }
 
   show(image) {
-    window.location.hash = '#' + image.id;
+    const {window} = this.dom;
+    const hash = '#' + image.id;
+
+    if (window.location.hash != hash) {
+      if (HAS_HISTORY) {
+        window.history.pushState('', '', window.location.pathname + hash);
+      } else {
+        window.location.hash = hash;
+      }
+    }
+
+    this.images.forEach((_image, index) => {
+      if (image.id == _image.id) {
+        this.currentIndex = index;
+      }
+    });
+
+    this.open();
   }
 }
 

@@ -7,12 +7,23 @@
       {{ .Content }}
     </div>
     <div class="Gallery_images">
-      {{ $pathUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName) "") }}
-      {{ $path := (delimit (slice "/static" $pathUrl) "") }}
+      {{ $publicUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName) "") }}
+      {{ $publicThumbnailUrl := (delimit (slice "/generated/thumbnails" $publicUrl) "") }}
+      {{ $path := (delimit (slice "/static" $publicUrl) "") }}
+      {{ $previewPath := (delimit (slice "/static/generated/previews" $publicUrl) "") }}
       {{- $files := readDir $path -}}
       {{- range $files }}
-      {{ $id := replace .Name ".jpg" "" }}
-        <a class="Gallery_image" href="#photo-{{ $id }}"><img id="photo-{{ $id }}" src="{{ $pathUrl }}{{ .Name | relURL }}" alt=""></a>
+        {{ $id := replace .Name ".jpg" "" }}
+        {{ $previewFile := (delimit (slice $previewPath (.Name | relURL)) "") }}
+        <div class="Gallery_image">
+          <a class="ProgressiveImage ProgressiveImage--waiting" data-trigger="studio" href="#photo-{{ $id }}">
+            <img id="photo-{{ $id }}"
+              class="ProgressiveImage_preview"
+              src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
+              data-src="{{ $publicThumbnailUrl }}{{ .Name | relURL }}"
+              data-src-full="{{ $publicUrl }}{{ .Name | relURL }}" alt="">
+          </a>
+        </div>
       {{- end }}
     </div>
   </div>

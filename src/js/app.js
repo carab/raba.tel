@@ -1,5 +1,8 @@
 // JS Goes here - ES6 supported
 
+import 'blissfuljs';
+
 import './components/Navigation.js';
 import './components/Header.js';
 import './components/Studio.js';
+import './components/ProgressiveImage.js';

@@ -2,10 +2,20 @@
   {{ $title := .Title }}
   <h2 class="GalleryThumbnail_title">{{ $title }}</h2>
 
-  {{ $pathUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName) "") }}
-  {{ $path := (delimit (slice "/static" $pathUrl) "") }}
+  {{ $publicUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName) "") }}
+  {{ $publicThumbnailUrl := (delimit (slice "/generated/thumbnails" $publicUrl) "") }}
+  {{ $path := (delimit (slice "/static" $publicUrl) "") }}
+  {{ $previewPath := (delimit (slice "/static/generated/previews" $publicUrl) "") }}
   {{- $files := readDir $path -}}
   {{- range first 1 $files }}
-    <img class="GalleryThumbnail_image" src="{{ $pathUrl }}{{ .Name | relURL }}" alt="{{ $title }}">
+    {{ $previewFile := (delimit (slice $previewPath (.Name | relURL)) "") }}
+    <div class="GalleryThumbnail_image">
+      <div class="ProgressiveImage ProgressiveImage--waiting">
+        <img
+          class="ProgressiveImage_preview"
+          src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
+          data-src="{{ $publicThumbnailUrl }}{{ .Name | relURL }}" alt="{{ $title }}">
+      </div>
+    </div>
   {{- end }}
 </a>

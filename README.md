@@ -1,15 +1,14 @@
-# Victor Hugo
+# Raba.tel
 
-**A [Hugo](https://gohugo.io/) boilerplate for creating truly epic websites**
-
-This is a boilerplate for using Hugo as a static site generator and Gulp + Webpack as your
-asset pipeline.
-
-It's setup to use post-css and babel for CSS and JavaScript.
-
-This project is released under the [MIT license](LICENSE). Please make sure you understand its implications and guarantees.
+This is the code source of my personal website, build on Webpack and Hugo.
 
 ## Usage
+
+On MacOS, install this dependency via Homebrew:
+
+```bash
+brew install homebrew/science/vips --with-webp --with-graphicsmagick
+```
 
 Be sure that you have the latest node, npm and [Hugo](https://gohugo.io/) installed. If you need to install hugo on OSX, run:
 

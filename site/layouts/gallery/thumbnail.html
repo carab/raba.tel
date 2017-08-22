@@ -1,7 +1,5 @@
 <a href="{{ .Permalink }}" class="GalleryThumbnail">
   {{ $title := .Title }}
-  <h2 class="GalleryThumbnail_title">{{ $title }}</h2>
-
   <div class="GalleryThumbnail_image">
     {{ $publicUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName "/" .Params.banner) "") }}
     {{ $publicThumbnailUrl := (delimit (slice "/generated/thumbnails" $publicUrl) "") }}
@@ -12,4 +10,6 @@
         data-src="{{ $publicThumbnailUrl }}">
     </div>
   </div>
+
+  <h2 class="GalleryThumbnail_title">{{ $title }}</h2>
 </a>

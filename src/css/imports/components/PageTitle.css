@@ -1,7 +1,7 @@
 .PageTitle {
   font-size: 2rem;
   text-align: center;
-  padding: 2em;
+  padding: 1em;
 
   & h1 {
     display: inline-block;
@@ -10,26 +10,32 @@
     margin: 0;
     line-height: 1;
     text-transform: uppercase;
+  }
 
-    &:before,
-    &:after {
-      content: '';
-      display: block;
-      width: 5rem;
-      height: 2px;
-      background: currentColor;
-      position: absolute;
-      top: 50%;
-    }
+  @media (--md-viewport) {
+    padding: 2em;
 
-    &:before {
-      right: 100%;
-      margin-right: 2rem;
-    }
+    & h1 {
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        width: 5rem;
+        height: 2px;
+        background: currentColor;
+        position: absolute;
+        top: 50%;
+      }
 
-    &:after {
-      left: 100%;
-      margin-left: 2rem;
+      &:before {
+        right: 100%;
+        margin-right: 2rem;
+      }
+
+      &:after {
+        left: 100%;
+        margin-left: 2rem;
+      }
     }
   }
 }

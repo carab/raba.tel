@@ -13,7 +13,7 @@ class Studio {
       close: $('.Studio_close', studio),
       previous: $('.Studio_previous', studio),
       next: $('.Studio_next', studio),
-    },
+    };
 
     this.images = $$('[href^="#"][data-trigger="studio"] img[id]');
     this.currentIndex = undefined;

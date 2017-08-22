@@ -1,4 +1,9 @@
 .Container {
   max-width: 600px;
   margin: auto;
+  padding: 0 2rem;
+
+  @media (--md-viewport) {
+    padding: 0;
+  }
 }

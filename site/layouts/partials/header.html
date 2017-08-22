@@ -6,7 +6,7 @@
   			{{ .Site.Title }}
   		</a>
     </div>
-    <div class="Header_nav">
+    <div class="Header_nav" aria-hidden="true">
       {{ partial "navigation.html" . }}
   	</div>
     <div class="Header_socials">
@@ -25,6 +25,9 @@
           {{ partial "icon.html" "instagram" }}
         </a>
       {{ end }}
+      <button type="button" class="Header_navToggle">
+        {{ partial "icon.html" "hamburger" }}
+      </button>
     </div>
   </div>
 </header>

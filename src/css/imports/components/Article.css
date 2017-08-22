@@ -6,9 +6,21 @@
   justify-content: center;
 
   & > * {
-    width: 33.33%;
+    width: 100%;
     display: block;
     padding: 20px;
+  }
+
+  @media (--md-viewport) {
+    & > * {
+      width: 50%;
+    }
+  }
+
+  @media (--lg-viewport) {
+    & > * {
+      width: 33.33%;
+    }
   }
 }
 

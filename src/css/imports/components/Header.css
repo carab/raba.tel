@@ -5,17 +5,16 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
-  //box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  z-index: var(--zindex-header);
   transform: translate3d(0, 0, 0);
 
   &:after {
     content: "";
+    display: block;
     position: absolute;
-    z-index: -1;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    z-index: var(--zindex-under);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .30);
     bottom: 0px;
-    width: 80%;
     height: 50%;
     border-radius: 100%;
     left: 10%;
@@ -63,7 +62,7 @@
       content: '';
       display: block;
       position: absolute;
-      z-index: 2;
+      z-index: var(--zindex-header);
       left: 100%;
       right: 0;
       top: 100%;
@@ -87,11 +86,62 @@
 .Header_nav {
   margin-left: auto;
   margin-right: auto;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-opposite);
+  z-index: var(--zindex-under);
+  transition: 400ms cubic-bezier(0.22, 0.61, 0.36, 1) transform;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: var(--zindex-under);
+    box-shadow: 0 0 15px #000;
+    bottom: 0px;
+    height: 10%;
+    border-radius: 100%;
+    left: 0;
+    right: 0;
+    transition: 300ms ease opacity;
+  }
+
+  &[aria-hidden="true"] {
+    transform: translateY(-100%);
+    pointer-events: none;
+
+    &:after {
+      opacity: 0;
+    }
+  }
+
+  &[aria-hidden="false"] {
+    transform: translateZ(0);
+    pointer-events: auto;
+
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  @media (--md-viewport) {
+    background: none;
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none !important;
+    pointer-events: auto !important;
+    z-index: auto;
+  }
 }
 
 .Header_socials {
-  padding-right: 20px;
+  padding-right: 10px;
   display: flex;
+  margin-left: auto;
 
   & a {
     display: block;
@@ -109,5 +159,34 @@
 
   & .Icon {
     display: block;
+    width: 25px;
+    height: 25px;
+  }
+
+  & .Header_navToggle {
+    margin-left: 10px;
+    background: none;
+    border: 0;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+
+    & .Icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @media (--md-viewport) {
+    padding-right: 20px;
+
+    & .Icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    & .Header_navToggle {
+      display: none;
+    }
   }
 }

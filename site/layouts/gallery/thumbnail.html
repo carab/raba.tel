@@ -2,20 +2,14 @@
   {{ $title := .Title }}
   <h2 class="GalleryThumbnail_title">{{ $title }}</h2>
 
-  {{ $publicUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName) "") }}
-  {{ $publicThumbnailUrl := (delimit (slice "/generated/thumbnails" $publicUrl) "") }}
-  {{ $path := (delimit (slice "/static" $publicUrl) "") }}
-  {{ $previewPath := (delimit (slice "/static/generated/previews" $publicUrl) "") }}
-  {{- $files := readDir $path -}}
-  {{- range first 1 $files }}
-    {{ $previewFile := (delimit (slice $previewPath (.Name | relURL)) "") }}
-    <div class="GalleryThumbnail_image">
-      <div class="ProgressiveImage ProgressiveImage--waiting">
-        <img
-          class="ProgressiveImage_preview"
-          src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
-          data-src="{{ $publicThumbnailUrl }}{{ .Name | relURL }}" alt="{{ $title }}">
-      </div>
+  <div class="GalleryThumbnail_image">
+    {{ $publicUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName "/" .Params.banner) "") }}
+    {{ $publicThumbnailUrl := (delimit (slice "/generated/thumbnails" $publicUrl) "") }}
+    {{ $previewFile := (delimit (slice "/static/generated/previews" $publicUrl) "") }}
+    <div class="ProgressiveImage ProgressiveImage--waiting">
+      <img class="ProgressiveImage_preview" alt="{{ .Title }}"
+        src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
+        data-src="{{ $publicThumbnailUrl }}">
     </div>
-  {{- end }}
+  </div>
 </a>

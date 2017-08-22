@@ -100,6 +100,7 @@
 
   &[data-trigger="studio"] {
     cursor: zoom-in;
+    border: 0;
 
     &:hover,
     &:focus {

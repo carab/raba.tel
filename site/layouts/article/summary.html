@@ -9,7 +9,7 @@
     {{ $publicThumbnailUrl := (delimit (slice "/generated/thumbnails" $publicUrl) "") }}
     {{ $previewFile := (delimit (slice "/static/generated/previews" $publicUrl) "") }}
     <div class="ProgressiveImage ProgressiveImage--waiting">
-      <img class="ProgressiveImage_preview" alt=""
+      <img class="ProgressiveImage_preview" alt="{{ .Title }}"
         src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
         data-src="{{ $publicThumbnailUrl }}">
     </div>

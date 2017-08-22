@@ -1,13 +1,21 @@
 <section class="Article Article-summary" itemscope itemtype="http://schema.org/Article">
 	<h2 class="Article_title" itemprop="name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-	<time class="Article_date" itemprop="date">{{ .Date.Format "02/01/2006 15:04" }}</time>
+	<time class="Article_date" itemprop="date">{{ .Date.Format "02/01/2006" }}</time>
 	{{ range .Params.tags }}
 	  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
 	{{ end }}
-	<article class="Article_content" itemprop="articleBody">
-		{{ .Summary }}
-		{{ if .Truncated }}
-			<a class="Article_more" href="{{ .Permalink }}">Read more...</a>
-		{{ end }}
+	<a href="{{ .Permalink }}" class="Article_banner">
+    {{ $publicUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName "/" .Params.banner) "") }}
+    {{ $publicThumbnailUrl := (delimit (slice "/generated/thumbnails" $publicUrl) "") }}
+    {{ $previewFile := (delimit (slice "/static/generated/previews" $publicUrl) "") }}
+    <div class="ProgressiveImage ProgressiveImage--waiting">
+      <img class="ProgressiveImage_preview" alt=""
+        src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
+        data-src="{{ $publicThumbnailUrl }}">
+    </div>
+	</a>
+	<article class="Article_description" itemprop="articleBody">
+		{{ .Description }}
+		<a class="Article_more" href="{{ .Permalink }}">Read more...</a>
 	</article>
 </section>

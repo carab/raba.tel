@@ -2,6 +2,8 @@
 draft: true
 title:  Comic Con Brussels 2017
 date: 2017-03-08T15:42:12+02:00
+banner: 02.jpg
+description: Experiencing in comic con event.
 ---
 
 ===> ENLEVER les "you", c'est pas un cours mais un rappel d'expérience.

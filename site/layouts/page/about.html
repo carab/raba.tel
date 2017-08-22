@@ -1,6 +1,9 @@
 {{ define "main" }}
   <div class="Container">
     <div class="About">
+      <div class="About_avatar">
+        <img alt="{{ .Title }}" src="data:image/jpg;base64,{{base64Encode (readFile "static/avatar.jpg")}}">
+      </div>
       {{ .Content }}
     </div>
   </div>

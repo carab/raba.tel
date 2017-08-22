@@ -1,6 +1,7 @@
 {{ define "main" }}
+  {{ $title := .Title }}
   <div class="PageTitle">
-    <h1>{{ .Title }}</h1>
+    <h1>{{ $title }}</h1>
   </div>
   <div class="Gallery">
     <div class="Gallery_content">
@@ -17,11 +18,11 @@
         {{ $previewFile := (delimit (slice $previewPath (.Name | relURL)) "") }}
         <div class="Gallery_image">
           <a class="ProgressiveImage ProgressiveImage--waiting" data-trigger="studio" href="#photo-{{ $id }}">
-            <img id="photo-{{ $id }}"
-              class="ProgressiveImage_preview"
+            <img id="photo-{{ $id }}" class="ProgressiveImage_preview"
+              alt="{{ $title }}"
               src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
               data-src="{{ $publicThumbnailUrl }}{{ .Name | relURL }}"
-              data-src-full="{{ $publicUrl }}{{ .Name | relURL }}" alt="">
+              data-src-full="{{ $publicUrl }}{{ .Name | relURL }}">
           </a>
         </div>
       {{- end }}

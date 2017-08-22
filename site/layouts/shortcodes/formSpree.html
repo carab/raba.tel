@@ -1,0 +1,14 @@
+{{ if .Site.Params.formSpreeEmail }}
+  <h1>Ask me anything</h1>
+  <form class="Form" method="POST" action="//formspree.io/{{ .Site.Params.formSpreeEmail }}">
+    <p>
+      <input type="email" name="email" placeholder="Your email">
+    </p>
+    <p>
+      <textarea name="message" placeholder="Your message"></textarea>
+    </p>
+    <footer>
+      <button type="submit" class="Button Button-primary">Send</button>
+    </footer>
+  </form>
+{{ end }}

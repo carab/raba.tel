@@ -1,8 +1,11 @@
 {{ define "main" }}
-  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "article") }}
-  {{ range $paginator.Pages }}
-    {{ .Render "summary"}}
-  {{ end }}
+  <div class="ArticleList">
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "article") }}
+    {{ range $paginator.Pages }}
+      {{ .Render "summary"}}
+    {{ end }}
+  </div>
+
   {{ if gt $paginator.TotalPages 1 }}
   <nav class="Pagination">
       <ul>

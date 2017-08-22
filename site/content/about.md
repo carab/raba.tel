@@ -6,13 +6,13 @@ menu:
     weight: 100
 ---
 
-Hello there,
+Hello there !
 
 My name is Camille Rabatel, and I am a web engineer from Lyon, France.
 
 I have been interested by photography since my younger years, but I really started investing time into it during my 3 years in Brussels, when I was offered a used Nikon D90.
 
-Since then, I have been interested by something smaller and am now shooting exclusively with my Fuji X-T1.
+This Nikon really helped understand photography, but now I've been seduced by the Fuji system and have acquired an X-T1.
 
 You will find on this website my favorite images from various types of photography, along some articles of my different experiences.
 
@@ -22,4 +22,4 @@ You can also use the contact form below if needed.
 Thank you,
 Camille.
 
-{{< contactForm >}}
+{{< formSpree >}}

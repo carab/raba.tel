@@ -1,3 +1,17 @@
 .About {
   text-align: justify;
 }
+
+.About_avatar {
+  border-radius: 50%;
+  max-width: 10rem;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+  border: 2px solid #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .20);
+
+  & img {
+    display: block;
+  }
+}

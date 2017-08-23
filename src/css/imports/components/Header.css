@@ -47,15 +47,10 @@
 .Header_logo {
   padding-left: 20px;
   flex: 1 1 0;
-
-  & svg {
-    width: 30px;
-    fill: currentColor;
-    margin-right: 10px;
-  }
+  line-height: 0;
 
   & a {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
     color: inherit;
@@ -84,6 +79,12 @@
         left: 0%;
       }
     }
+  }
+
+  & svg {
+    width: 30px;
+    fill: currentColor;
+    margin-right: 10px;
   }
 }
 

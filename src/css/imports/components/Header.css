@@ -32,17 +32,21 @@
 
 .Header_bar {
   display: flex;
-  height: 48px;
+  height: var(--height-sm-header);
   align-items: center;
   background: var(--color-opposite);
 
   & a {
     border: 0;
   }
+    @media (--md-viewport) {
+      height: var(--height-md-header);
+    }
 }
 
 .Header_logo {
   padding-left: 20px;
+  flex: 1 1 0;
 
   & svg {
     width: 30px;
@@ -84,8 +88,7 @@
 }
 
 .Header_nav {
-  margin-left: auto;
-  margin-right: auto;
+  flex: 1 1 0;
   position: absolute;
   top: 100%;
   left: 0;
@@ -141,7 +144,9 @@
 .Header_socials {
   padding-right: 10px;
   display: flex;
-  margin-left: auto;
+  flex: 1 1 0;
+  justify-content: flex-end;
+  align-items: center;
 
   & a {
     display: block;

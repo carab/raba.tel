@@ -1,5 +1,5 @@
 .Page {
-  padding-top: 48px;
+  padding-top: var(--height-sm-header);
   min-height: 100vh;
   width: 100%;
   display: grid;
@@ -9,6 +9,10 @@
     "header"
     "main"
     "footer";
+
+  @media (--md-viewport) {
+    padding-top: var(--height-md-header);
+  }
 }
 
 .Page_separator {

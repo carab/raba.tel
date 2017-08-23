@@ -6,9 +6,11 @@
   --color-secondary: #324b5a;
   --color-opposite: #fff;
 
+  --height-sm-header: 56px;
+  --height-md-header: 48px;
+
   --zindex-under: -1;
   --zindex-bottom: 1;
-  --zindex-header-nav: 9;
   --zindex-header: 10;
   --zindex-navigation: 20;
   --zindex-studio: 30;

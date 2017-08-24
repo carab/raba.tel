@@ -12,7 +12,7 @@
 	  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 
 		<meta property="og:locale" content="{{ .Site.LanguageCode}}">
-		<meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
+		<meta property="og:title" content="{{ if and .Title (not .IsHome) }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
 		<meta property="og:type" content="article" />
 		<meta property="og:url" content="{{ .Permalink }}"/>
 		<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">

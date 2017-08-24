@@ -87,11 +87,11 @@ class Studio {
 
     const gallery = new Hammer(this.dom.gallery);
     gallery.on('panright', (event) => {
-      console.log(event);
+      //console.log(event);
     });
 
     gallery.on('panleft', (event) => {
-      console.log(event);
+      //console.log(event);
     });
 
     gallery.on('swiperight', (event) => {
@@ -145,14 +145,15 @@ class Studio {
       img.alt = currentImage.alt;
 
       const setImage = () => {
-        this.dom.loader.setAttribute('aria-hidden', 'true');
         this.dom.image.innerHTML = '';
+        this.dom.loader.setAttribute('aria-hidden', 'true');
         this.dom.image.appendChild(img)
       };
 
       if (img.complete) {
         setImage();
       } else {
+        this.dom.image.innerHTML = '';
         img.onload = setImage;
       }
 

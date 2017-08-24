@@ -21,6 +21,7 @@ class Studio {
     };
 
     this.images = $$('[href^="#"][data-trigger="studio"] img[id]');
+    this.imageCache = {};
     this.currentIndex = undefined;
 
     this.attach();
@@ -155,16 +156,22 @@ class Studio {
     const currentImage = this.images[this.currentIndex];
 
     if (currentImage) {
-      this.dom.loader.setAttribute('aria-hidden', 'false');
+      const src = currentImage.getAttribute('data-src-full');
+      let img = this.imageCache[src];
 
-      var img = new Image();
-      img.src = currentImage.getAttribute('data-src-full');
-      img.alt = currentImage.alt;
+      if (img == undefined) {
+        this.dom.loader.setAttribute('aria-hidden', 'false');
+
+        img = new Image();
+        img.src = src;
+        img.alt = currentImage.alt;
+        this.imageCache[src] = img;
+      }
 
       const setImage = () => {
         this.dom.image.innerHTML = '';
         this.dom.loader.setAttribute('aria-hidden', 'true');
-        this.dom.image.appendChild(img)
+        this.dom.image.appendChild(img);
       };
 
       if (img.complete) {

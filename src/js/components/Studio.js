@@ -5,6 +5,9 @@ class Studio {
   constructor() {
     const studio = $('.Studio');
 
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+
     this.dom = {
       window: window,
       document: document,
@@ -68,7 +71,10 @@ class Studio {
     });
 
     this.dom.studio.addEventListener('click', (event) => {
-      if (event.target == this.dom.studio) {
+      if (
+        event.target == this.dom.studio
+        || event.target == this.dom.image
+      ) {
         this.close();
       }
     });
@@ -83,6 +89,17 @@ class Studio {
 
     this.dom.next.addEventListener('click', (event) => {
       this.next();
+    });
+
+    let nextOrPrevious = this.next;
+    this.dom.image.addEventListener('click', (event) => {
+      if (this.currentIndex == 0) {
+        nextOrPrevious = this.next;
+      } else if ((this.currentIndex + 1) == this.images.length) {
+        nextOrPrevious = this.previous;
+      }
+
+      nextOrPrevious();
     });
 
     const gallery = new Hammer(this.dom.gallery);

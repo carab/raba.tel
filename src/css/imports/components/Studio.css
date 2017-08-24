@@ -123,11 +123,13 @@
 .Studio_previous {
   right: 50%;
   margin-right: 5px;
+  cursor: w-resize;
 }
 
 .Studio_next {
   left: 50%;
   margin-left: 5px;
+  cursor: e-resize;
 }
 
 @media (--md-viewport) {

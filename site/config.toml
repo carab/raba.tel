@@ -14,8 +14,9 @@ relativeURLs = true
   facebookUrl = "https://www.facebook.com/camille.rabatel"
   twitterUrl = ""
   instagramUrl = "https://www.instagram.com/camille.rabatel"
-  description = "Camille Rabatel's personal website about photography"
+  description = "Camille Rabatel personal site about photography"
   author = "Camille Rabatel"
+  avatar = "avatar.jpg"
 
 [taxonomies]
   tag = "tags"

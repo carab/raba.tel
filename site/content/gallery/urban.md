@@ -3,6 +3,7 @@ draft: false
 title: Urban
 date: 2017-08-22T16:00:00+02:00
 banner: 001.jpg
+description: My favorite urban photos.
 menu:
   main:
     identifier: urban

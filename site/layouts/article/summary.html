@@ -5,13 +5,13 @@
 	  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
 	{{ end }}
 	<a href="{{ .Permalink }}" class="Article_banner">
-    {{ $publicUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName "/" .Params.banner) "") }}
-    {{ $publicThumbnailUrl := (delimit (slice "/generated/thumbnails" $publicUrl) "") }}
-    {{ $previewFile := (delimit (slice "/static/generated/previews" $publicUrl) "") }}
+    {{ $publicUrl := (delimit (slice "photos/" .File.Dir .File.TranslationBaseName "/" .Params.banner) "") }}
+    {{ $publicThumbnailUrl := (delimit (slice "generated/thumbnails/" $publicUrl) "") }}
+    {{ $previewFile := (delimit (slice "/static/generated/previews/" $publicUrl) "") }}
     <div class="ProgressiveImage ProgressiveImage--waiting">
       <img class="ProgressiveImage_preview" alt="{{ .Title }}"
         src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
-        data-src="{{ $publicThumbnailUrl }}">
+        data-src="{{ .Site.BaseURL }}{{ $publicThumbnailUrl }}">
     </div>
 	</a>
 	<article class="Article_description" itemprop="articleBody">

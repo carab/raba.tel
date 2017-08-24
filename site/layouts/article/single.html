@@ -2,15 +2,15 @@
   <section class="Article" itemscope itemtype="http://schema.org/Article">
     <div class="Container">
       <div class="Article_banner">
-        {{ $publicUrl := (delimit (slice "/photos/" .File.Dir .File.TranslationBaseName "/" .Params.banner) "") }}
-        {{ $previewFile := (delimit (slice "/static/generated/previews" $publicUrl) "") }}
+        {{ $publicUrl := (delimit (slice "photos/" .File.Dir .File.TranslationBaseName "/" .Params.banner) "") }}
+        {{ $previewFile := (delimit (slice "/static/generated/previews/" $publicUrl) "") }}
         {{ $id := replace .Params.banner ".jpg" "" }}
         <a class="ProgressiveImage ProgressiveImage--waiting" data-trigger="studio" href="#photo-{{ $id }}">
           <img id="photo-{{ $id }}" class="ProgressiveImage_preview"
             alt="{{ .Title }}"
             src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
-            data-src="{{ $publicUrl }}"
-            data-src-full="{{ $publicUrl }}">
+            data-src="{{ .Site.BaseURL }}{{ $publicUrl }}"
+            data-src-full="{{ .Site.BaseURL }}{{ $publicUrl }}">
         </a>
       </div>
     </div>

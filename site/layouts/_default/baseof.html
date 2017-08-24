@@ -7,6 +7,7 @@
 
 		<title>{{ if and .Title (not .IsHome) }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 
+		<link rel="canonical" href="{{ .Permalink }}" />
 		<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.SiteDescription }}{{ end }}">
 	  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 

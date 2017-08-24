@@ -3,7 +3,10 @@
     {{ partial "icon.html" "close" }}
   </button>
 
-  <img class="Studio_image" src="" alt="">
+  <div class="Studio_gallery">
+    <div class="Studio_loader" aria-hidden="false">{{ partial "icon.html" "hamburger" }}</div>
+    <div class="Studio_image"></div>
+  </div>
 
   <button class="Studio_previous" type="button" title="Previous">
     {{ partial "icon.html" "previous" }}

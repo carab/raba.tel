@@ -9,6 +9,8 @@ class Studio {
       window: window,
       document: document,
       studio: studio,
+      gallery: $('.Studio_gallery', studio),
+      loader: $('.Studio_loader', studio),
       image: $('.Studio_image', studio),
       close: $('.Studio_close', studio),
       previous: $('.Studio_previous', studio),
@@ -82,6 +84,23 @@ class Studio {
     this.dom.next.addEventListener('click', (event) => {
       this.next();
     });
+
+    const gallery = new Hammer(this.dom.gallery);
+    gallery.on('panright', (event) => {
+      console.log(event);
+    });
+
+    gallery.on('panleft', (event) => {
+      console.log(event);
+    });
+
+    gallery.on('swiperight', (event) => {
+      this.previous();
+    });
+
+    gallery.on('swipeleft', (event) => {
+      this.next();
+    });
   }
 
   handle(hash) {
@@ -119,8 +138,25 @@ class Studio {
     const currentImage = this.images[this.currentIndex];
 
     if (currentImage) {
-      this.dom.image.src = currentImage.getAttribute('data-src-full');
-      this.dom.image.alt = currentImage.alt;
+      this.dom.loader.setAttribute('aria-hidden', 'false');
+
+      var img = new Image();
+      img.src = currentImage.getAttribute('data-src-full');
+      img.alt = currentImage.alt;
+
+      const setImage = () => {
+        this.dom.loader.setAttribute('aria-hidden', 'true');
+        this.dom.image.innerHTML = '';
+        this.dom.image.appendChild(img)
+      };
+
+      if (img.complete) {
+        setImage();
+      } else {
+        img.onload = setImage;
+      }
+
+      // Show studio and update arrows
       this.dom.studio.setAttribute('aria-hidden', 'false');
 
       if (this.currentIndex <= 0) {

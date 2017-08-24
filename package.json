@@ -36,6 +36,7 @@
     "gulp-postcss": "^6.1.1",
     "gulp-responsive": "^2.7.1",
     "gulp-util": "^3.0.7",
+    "hammerjs": "^2.0.8",
     "imports-loader": "^0.6.5",
     "normalize.css": "^6.0.0",
     "postcss-cssnext": "^2.10.0",

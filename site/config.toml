@@ -11,7 +11,7 @@ relativeURLs = true
 
 [params]
   formSpreeEmail = "camille@raba.tel"
-  facebookUrl = "https://www.facebook.com/camille.rabatel"
+  #facebookUrl = "https://www.facebook.com/camille.rabatel"
   twitterUrl = ""
   instagramUrl = "https://www.instagram.com/camille.rabatel"
   description = "Camille Rabatel personal site about photography"

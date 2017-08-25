@@ -1,6 +1,10 @@
 {{ if .Site.Params.formSpreeEmail }}
   <h1>Ask me anything</h1>
   <form class="Form" method="POST" action="//formspree.io/{{ .Site.Params.formSpreeEmail }}">
+    <input type="hidden" name="_format" value="plain" />
+    <input type="hidden" name="_language" value="{{ .Site.LanguageCode }}" />
+    <input type="hidden" name="_subject" value="New contact from camillerabatel.com" />
+    <input type="hidden" name="_next" value="{{ ref $.Page "thank-you.md" }}" />
     <p>
       <input type="email" name="email" placeholder="Your email">
     </p>

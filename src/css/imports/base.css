@@ -38,3 +38,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.t-small {
+  font-size: 0.6em;
+}

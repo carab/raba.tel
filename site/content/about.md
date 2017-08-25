@@ -6,7 +6,7 @@ menu:
     weight: 100
 ---
 
-Hello there !
+Hello there!
 
 My name is Camille Rabatel, and I am a web engineer from Lyon, France.
 
@@ -16,8 +16,7 @@ This Nikon really helped me understand photography, but I've now been seduced by
 
 You will find on this website my favorite images from various types of photography, along some articles of my different experiences.
 
-Please do not hesitate to comment and give me some piece of advice, I'm all ears !
-You can also use the contact form below if needed.
+If you have any questions or requests, please do not hesitate to contact me using the form below. I'll reach back to you as soon as possible.
 
 Thank you, and [thanks to them]({{< relref "thanks.md" >}}).
 Camille.

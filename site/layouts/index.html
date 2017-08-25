@@ -2,7 +2,7 @@
   {{ .Content }}
 
   <div class="GalleryList">
-  	{{ range (where .Site.RegularPages "Type" "gallery") }}
+  	{{ range (where .Site.RegularPages "Type" "gallery").ByWeight }}
   		{{ .Render "thumbnail"}}
   	{{ end }}
   </div>

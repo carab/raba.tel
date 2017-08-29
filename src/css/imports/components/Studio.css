@@ -22,7 +22,7 @@
   }
 
   @media (--md-viewport) {
-    padding: 7rem;
+    padding: 3rem 7rem;
   }
 }
 

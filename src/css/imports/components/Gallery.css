@@ -16,7 +16,7 @@
     padding: 10px;
 
     & > * {
-      width: 33.33%;
+      //width: 33.33%;
       padding: 10px;
     }
   }
@@ -117,6 +117,15 @@
   & img {
     display: block;
     height: 20rem;
+    height: 32vh;
+
+    @media (--md-viewport) {
+      //height: 40vh;
+    }
+
+    @media (--lg-viewport) {
+      height: 40vh;
+    }
   }
 }
 

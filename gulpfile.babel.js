@@ -47,8 +47,8 @@ gulp.task('photo:thumbnail', () => (
     //.pipe(changed('./site/static/generated/thumbails/photos'))
     .pipe(responsive({
       '**/*.jpg': [{
-        width: 300,
-        height: 200,
+        width: 420,
+        height: 280,
         quality: 50,
         max: true,
       }]

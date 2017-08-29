@@ -7,3 +7,14 @@
     padding: 0;
   }
 }
+
+.Containment {
+  @media (--lg-viewport) {
+    width: 900px;
+    max-width: 100%;
+  }
+
+  @media (--xl-viewport) {
+    width: 1150px;
+  }
+}

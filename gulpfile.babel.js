@@ -56,6 +56,10 @@ gulp.task('photo:thumbnail', () => (
     .pipe(gulp.dest('./site/static/generated/thumbnails/photos'))
 ));
 
+gulp.task('photo', ['photo:preview', 'photo:thumbnail'], () => {
+
+});
+
 gulp.task("js", (cb) => {
   const myConfig = Object.assign({}, webpackConfig);
 

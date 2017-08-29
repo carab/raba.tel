@@ -7,7 +7,7 @@
     "hugo": "gulp hugo",
     "build": "gulp build",
     "build-preview": "gulp build-preview",
-    "photos": "gulp photo:preview && gulp photo:thumbnail",
+    "photo": "gulp photo",
     "start": "gulp server",
     "lint": "eslint src"
   },

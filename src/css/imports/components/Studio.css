@@ -68,6 +68,7 @@
     width: auto;
     will-change: opacity, transform;
     animation: reveal 0.5s ease-out;
+    border: 10px solid var(--color-opposite);
   }
 }
 

@@ -34,11 +34,6 @@
   }
 }
 
-.Article_more {
-  font-weight: bold;
-  white-space: nowrap;
-}
-
 .Article_date {
   color: #ddd;
   font-size: 1.4rem;
@@ -72,6 +67,11 @@
 
 .ArticleSummary {
 
+}
+
+.ArticleSummary_more {
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 .ArticleSummary_title {

@@ -2,7 +2,7 @@ baseurl = "/"
 languageCode = "en"
 googleAnalytics = "UA-78711157-2"
 buildDrafts = false
-title = "Camille Photography"
+title = "Camille R. Photography"
 newContentEditor = "atom"
 relativeURLs = true
 

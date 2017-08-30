@@ -27,6 +27,7 @@
   width: 100%;
   max-width: 90rem;
   padding: 0 5vw;
+  margin: auto;
 
   @media (--md-viewport) {
     padding-left: 15%;

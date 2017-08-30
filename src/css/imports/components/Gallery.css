@@ -4,7 +4,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+  padding: 3rem 15px;
 
   & > * {
     width: 50%;
@@ -13,7 +13,8 @@
   }
 
   @media (--md-viewport) {
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 
     & > * {
       //width: 33.33%;
@@ -22,10 +23,11 @@
   }
 
   @media (--lg-viewport) {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
 
     & > * {
-      width: 33.33%;
+      //width: 33.33%;
       display: block;
       padding: 20px;
     }
@@ -115,7 +117,7 @@
   border: 0;
 
   & img {
-    display: block;
+    width: auto;
     height: 20rem;
     height: 32vh;
 
@@ -124,49 +126,7 @@
     }
 
     @media (--lg-viewport) {
-      height: 40vh;
-    }
-  }
-}
-
-.ProgressiveImage {
-  display: block;
-  overflow: hidden;
-  position: relative;
-
-  &[data-trigger="studio"] {
-    cursor: zoom-in;
-    border: 0;
-
-    &:hover,
-    &:focus {
-      color: inherit;
-      background: none;
-    }
-  }
-}
-
-.ProgressiveImage_preview {
-  filter: blur(2vw);
-  transform: scale(1.2);
-}
-
-.ProgressiveImage_thumbnail {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transition: 0.2s ease-out transform;
-  will-change: transform, opacity;
-  animation: reveal 0.5s ease-out;
-}
-
-a {
-  &:hover,
-  &:focus {
-    & .ProgressiveImage_thumbnail {
-      transform: scale(1.05);
+      //height: 40vh;
     }
   }
 }

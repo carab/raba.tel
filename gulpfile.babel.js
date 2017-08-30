@@ -33,8 +33,8 @@ gulp.task('photo:preview', () => (
     //.pipe(changed('./site/static/generated/previews/photos'))
     .pipe(responsive({
       '**/*.jpg': [{
-        width: 15,
-        height: 10,
+        width: 30,
+        height: 20,
         quality: 50,
         max: true
       }]
@@ -47,8 +47,8 @@ gulp.task('photo:thumbnail', () => (
     //.pipe(changed('./site/static/generated/thumbails/photos'))
     .pipe(responsive({
       '**/*.jpg': [{
-        width: 420,
-        height: 280,
+        width: 600,
+        height: 400,
         quality: 50,
         max: true,
       }]

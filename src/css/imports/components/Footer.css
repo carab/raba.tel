@@ -3,5 +3,9 @@
   background: #fff;
   text-align: center;
   font-size: 0.9em;
-  padding: 4em 0 2em;
+  padding: 8rem 0 2rem;
+}
+
+.Footer_credit {
+  font-size: 0.6em;
 }

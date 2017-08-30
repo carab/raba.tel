@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class="Containment">
+  <div class="Container">
     <div class="ArticleList">
       {{ $paginator := .Paginate (where .Site.RegularPages "Type" "article") }}
       {{ range $paginator.Pages }}

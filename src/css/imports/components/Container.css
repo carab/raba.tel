@@ -1,4 +1,6 @@
 .Container {
+  padding: 0 2rem;
+
   @media (--md-viewport) {
     padding: 0;
     width: 600px;

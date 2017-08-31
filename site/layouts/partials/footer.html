@@ -1,5 +1,5 @@
 <footer class="Footer">
-  &copy; {{ now.Year }} - {{ .Site.Title }}
+  &copy; {{ now.Year }} - {{ .Site.Params.author }}
 
   <p class="Footer_credit">
     Icons made by <br/>
@@ -13,17 +13,25 @@
     <!-- next, previous -->
     <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a>,
 
-    <!-- 500px -->
-    <a href="http://www.freepik.com" title="Freepik">Freepik</a>,
+    {{ if .Site.Params.fivehundredpxUrl }}
+      <!-- 500px -->
+      <a href="http://www.freepik.com" title="Freepik">Freepik</a>,
+    {{ end }}
 
-    <!-- Facebook -->
-    <a href="https://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a>,
+    {{ if .Site.Params.facebookUrl }}
+      <!-- Facebook -->
+      <a href="https://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a>,
+    {{ end }}
 
-    <!-- Instagram -->
-    <a href="http://www.freepik.com" title="Freepik">Freepik</a>,
+    {{ if .Site.Params.instagramUrl }}
+      <!-- Instagram -->
+      <a href="http://www.freepik.com" title="Freepik">Freepik</a>,
+    {{ end }}
 
-    <!-- Twitter -->
-    <a href="https://www.flaticon.com/authors/elegant-themes" title="Elegant Themes">Elegant Themes</a>,
+    {{ if .Site.Params.twitterUrl }}
+      <!-- Twitter -->
+      <a href="https://www.flaticon.com/authors/elegant-themes" title="Elegant Themes">Elegant Themes</a>,
+    {{ end }}
 
     <!-- Hamburger -->
     and <a href="https://www.flaticon.com/authors/chris-veigt" title="Chris Veigt">Chris Veigt</a>

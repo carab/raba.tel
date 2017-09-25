@@ -2,7 +2,7 @@ baseurl = "/"
 languageCode = "en"
 googleAnalytics = "UA-78711157-2"
 buildDrafts = false
-title = "Camille Photography"
+title = "Camille Rabatel"
 newContentEditor = "atom"
 relativeURLs = true
 
@@ -14,7 +14,7 @@ relativeURLs = true
   #facebookUrl = "https://www.facebook.com/camille.rabatel"
   twitterUrl = ""
   instagramUrl = "https://www.instagram.com/camille.rabatel"
-  description = "Camille's personal photography site"
+  description = "Camille Rabatel's personal photography site"
   author = "Camille Rabatel"
   avatar = "avatar.jpg"
 

@@ -1,7 +1,7 @@
 <a href="{{ .Permalink }}" class="GalleryThumbnail">
   {{ $title := .Title }}
   <div class="GalleryThumbnail_image">
-    {{ $publicUrl := (delimit (slice "photos/" .File.Dir .File.TranslationBaseName "/" .Params.banner) "") }}
+    {{ $publicUrl := (delimit (slice .File.Dir "/photos/" .Params.banner) "") }}
     {{ $publicThumbnailUrl := (delimit (slice "generated/thumbnails/" $publicUrl) "") }}
     {{ $previewFile := (delimit (slice "/static/generated/previews/" $publicUrl) "") }}
     <div class="ProgressiveImage ProgressiveImage--waiting">

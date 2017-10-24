@@ -1,7 +1,7 @@
 {{ define "main" }}
   <section class="Article" itemscope itemtype="http://schema.org/Article">
     <div class="Article_banner">
-      {{ $publicUrl := (delimit (slice "photos/" .File.Dir .File.TranslationBaseName "/" .Params.banner) "") }}
+      {{ $publicUrl := (delimit (slice .File.Dir "/photos/" .Params.banner) "") }}
       {{ $previewFile := (delimit (slice "/static/generated/previews/" $publicUrl) "") }}
       {{ $id := replace .Params.banner ".jpg" "" }}
       <a class="ProgressiveImage ProgressiveImage--waiting" data-trigger="studio" href="#photo-{{ $id }}">

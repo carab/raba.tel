@@ -34,11 +34,18 @@ class ProgressiveImage {
 
   loadImage(item) {
     // load image
-    var img = new Image();
-    img.src = item.querySelector('.ProgressiveImage_preview').getAttribute('data-src');
+    const img = new Image()
+    const preview = item.querySelector('.ProgressiveImage_preview')
+
+    img.src = preview.getAttribute('data-src');
+    img.alt = preview.getAttribute('alt');
     img.className = 'ProgressiveImage_thumbnail';
-    if (img.complete) addImg();
-    else img.onload = addImg;
+
+    if (img.complete) {
+      addImg()
+    } else {
+      img.onload = addImg
+    }
 
           // replace image
     function addImg() {

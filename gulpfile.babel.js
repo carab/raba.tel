@@ -29,7 +29,7 @@ gulp.task("css", () => (
 ));
 
 gulp.task('photo:preview', () => (
-  gulp.src('./site/static/photos/**/*.jpg')
+  gulp.src('./site/content/**/photos/*.jpg')
     //.pipe(changed('./site/static/generated/previews/photos'))
     .pipe(responsive({
       '**/*.jpg': [{
@@ -39,11 +39,11 @@ gulp.task('photo:preview', () => (
         max: true
       }]
     }))
-    .pipe(gulp.dest('./site/static/generated/previews/photos'))
+    .pipe(gulp.dest('./site/static/generated/previews'))
 ));
 
 gulp.task('photo:thumbnail', () => (
-  gulp.src('./site/static/photos/**/*.jpg')
+  gulp.src('./site/content/**/photos/*.jpg')
     //.pipe(changed('./site/static/generated/thumbails/photos'))
     .pipe(responsive({
       '**/*.jpg': [{
@@ -53,7 +53,7 @@ gulp.task('photo:thumbnail', () => (
         max: true,
       }]
     }))
-    .pipe(gulp.dest('./site/static/generated/thumbnails/photos'))
+    .pipe(gulp.dest('./site/static/generated/thumbnails'))
 ));
 
 gulp.task('photo', ['photo:preview', 'photo:thumbnail'], () => {

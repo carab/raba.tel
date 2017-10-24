@@ -2,7 +2,7 @@
 {{ $alt := .Get 1}}
 
 <div class="Article_photo">
-  {{ $publicUrl := (delimit (slice "/photos/" $.Page.File.Dir $.Page.File.TranslationBaseName "/" $photo) "") }}
+  {{ $publicUrl := (delimit (slice "/" $.Page.File.Dir "/photos/" $photo) "") }}
   {{ $previewFile := (delimit (slice "/static/generated/previews" $publicUrl) "") }}
   {{ $id := replace $photo ".jpg" "" }}
   <a class="ProgressiveImage ProgressiveImage--waiting" data-trigger="studio" href="#photo-{{ $id }}">

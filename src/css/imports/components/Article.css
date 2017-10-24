@@ -30,8 +30,8 @@
   margin: auto;
 
   @media (--md-viewport) {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
 }
 
@@ -47,8 +47,8 @@
   margin: 0 -5vw;
 
   @media (--md-viewport) {
-    margin-left: -21.33%;
-    margin-right: -21.33%;
+    margin-left: -10rem;
+    margin-right: -10rem;
   }
 }
 

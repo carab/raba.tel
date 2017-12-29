@@ -1,15 +1,8 @@
 {{ $photo := .Get 0}}
 {{ $alt := .Get 1}}
+{{ $filenameParts := split $photo "." }}
+{{ $id := index $filenameParts 0 }}
 
-<div class="Article_photo">
-  {{ $publicUrl := (delimit (slice "/" $.Page.File.Dir "/photos/" $photo) "") }}
-  {{ $previewFile := (delimit (slice "/static/generated/previews" $publicUrl) "") }}
-  {{ $id := replace $photo ".jpg" "" }}
-  <a class="ProgressiveImage ProgressiveImage--waiting" data-trigger="studio" href="#photo-{{ $id }}">
-    <img id="photo-{{ $id }}" class="ProgressiveImage_preview"
-      alt="{{ $alt }}"
-      src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
-      data-src="{{ $publicUrl }}"
-      data-src-full="{{ $publicUrl }}">
-  </a>
-</div>
+{{ with $.Page.Resources.GetByPrefix $photo }}
+  {{ partial "photo.html" (dict "resource" . "alt" $alt "id" $id) }}
+{{ end }}

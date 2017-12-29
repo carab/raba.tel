@@ -2,8 +2,6 @@ import gulp from "gulp";
 import cp from "child_process";
 import gutil from "gulp-util";
 import postcss from "gulp-postcss";
-import changed from "gulp-changed";
-import responsive from "gulp-responsive";
 import cssImport from "postcss-import";
 import cssnext from "postcss-cssnext";
 import BrowserSync from "browser-sync";
@@ -19,7 +17,6 @@ gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture
 
 gulp.task("build", ["css", "js", "hugo"]);
 gulp.task("build-preview", ["css", "js", "hugo-preview"]);
-gulp.task("photos", ["thumbnails", "previews"]);
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
@@ -27,38 +24,6 @@ gulp.task("css", () => (
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
 ));
-
-gulp.task('photo:preview', () => (
-  gulp.src('./site/content/**/photos/*.jpg')
-    //.pipe(changed('./site/static/generated/previews/photos'))
-    .pipe(responsive({
-      '**/*.jpg': [{
-        width: 30,
-        height: 20,
-        quality: 50,
-        max: true
-      }]
-    }))
-    .pipe(gulp.dest('./site/static/generated/previews'))
-));
-
-gulp.task('photo:thumbnail', () => (
-  gulp.src('./site/content/**/photos/*.jpg')
-    //.pipe(changed('./site/static/generated/thumbails/photos'))
-    .pipe(responsive({
-      '**/*.jpg': [{
-        width: 600,
-        height: 400,
-        quality: 50,
-        max: true,
-      }]
-    }))
-    .pipe(gulp.dest('./site/static/generated/thumbnails'))
-));
-
-gulp.task('photo', ['photo:preview', 'photo:thumbnail'], () => {
-
-});
 
 gulp.task("js", (cb) => {
   const myConfig = Object.assign({}, webpackConfig);

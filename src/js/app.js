@@ -6,4 +6,4 @@ import 'hammerjs';
 import './components/Navigation.js';
 import './components/Header.js';
 import './components/Studio.js';
-import './components/ProgressiveImage.js';
+import './components/Photo.js';

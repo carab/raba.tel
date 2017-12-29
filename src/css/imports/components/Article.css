@@ -43,7 +43,8 @@
 }
 
 .Article_banner,
-.Article_photo {
+.Article_content .Photo,
+.Article_content .Pellicule {
   margin: 0 -5vw;
 
   @media (--md-viewport) {
@@ -57,7 +58,8 @@
   margin-bottom: 1rem;
 }
 
-.Article_photo {
+.Article_content .Photo,
+.Article_content .Pellicule {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }

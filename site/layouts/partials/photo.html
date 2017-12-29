@@ -1,0 +1,21 @@
+{{ $preview := .resource.Fit "20x20" }}
+{{ $thumbnail := .resource.Fit "600x600" }}
+{{ $previewFile := (delimit (slice "resources/_gen/images/" $preview.Permalink) "") }}
+
+{{ $width := (div (mul (float .resource.Width) 200.0) (float .resource.Height))}}
+{{ $maxWidth := (div (mul (float .resource.Width) 300.0) (float .resource.Height))}}
+{{ $ratio := (mul (div (float .resource.Height) (float .resource.Width)) 100.0)}}
+
+<a
+  class="Photo Photo--waiting"
+  data-trigger="studio"
+  href="#photo-{{ .id }}"
+  style="width:{{$width}}px;max-width:{{$maxWidth}}px;flex-grow:{{$width}}"
+>
+  <i style="padding-bottom:{{$ratio}}%"></i>
+  <img id="photo-{{ .id }}" class="Photo_preview"
+    alt="{{ .alt }}"
+    src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
+    data-src="{{ $thumbnail.RelPermalink }}"
+    data-src-full="{{ .resource.RelPermalink }}">
+</a>

@@ -10,27 +10,15 @@
         {{ .Content }}
       </div>
     </div>
-    <div class="Gallery_images">
-      {{ $publicUrl := (delimit (slice .File.Dir "photos") "") }}
-      {{ $publicThumbnailUrl := (delimit (slice "generated/thumbnails/" $publicUrl) "") }}
-      {{ $path := (delimit (slice "content/" $publicUrl) "") }}
-      {{ $previewPath := (delimit (slice "/static/generated/previews/" $publicUrl) "") }}
-      {{- $files := readDir $path -}}
-      {{- range $files }}
-        {{ $previewFile := (delimit (slice $previewPath (.Name | relURL)) "") }}
-        {{ if (fileExists $previewFile) -}}
-          {{ $id := replace .Name ".jpg" "" }}
-          <div class="Gallery_image">
-            <a class="ProgressiveImage ProgressiveImage--waiting" data-trigger="studio" href="#photo-{{ $id }}">
-              <img id="photo-{{ $id }}" class="ProgressiveImage_preview"
-                alt="{{ $title }}"
-                src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
-                data-src="{{ $baseUrl }}{{ $publicThumbnailUrl }}{{ .Name | relURL }}"
-                data-src-full="{{ $baseUrl }}{{ $publicUrl }}{{ .Name | relURL }}">
-            </a>
-          </div>
-        {{- end }}
-      {{- end }}
+    <div class="Pellicule Pellicule-padded">
+      {{ range .Resources.ByType "image" }}
+        {{ $filepathParts := split .Permalink "/" }}
+        {{ $filepathParts := last 1 $filepathParts }}
+        {{ $filename := index $filepathParts 0 }}
+        {{ $filenameParts := split $filename "." }}
+        {{ $id := index $filenameParts 0 }}
+        {{ partial "photo.html" (dict "resource" . "alt" $title "id" $id) }}
+      {{ end }}
     </div>
   </div>
 {{ end }}

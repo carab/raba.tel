@@ -1,15 +1,11 @@
+{{ $title := .Title }}
+{{ $banner := .Params.banner }}
 <a href="{{ .Permalink }}" class="GalleryThumbnail">
-  {{ $title := .Title }}
-  <div class="GalleryThumbnail_image">
-    {{ $publicUrl := (delimit (slice .File.Dir "/photos/" .Params.banner) "") }}
-    {{ $publicThumbnailUrl := (delimit (slice "generated/thumbnails/" $publicUrl) "") }}
-    {{ $previewFile := (delimit (slice "/static/generated/previews/" $publicUrl) "") }}
-    <div class="ProgressiveImage ProgressiveImage--waiting">
-      <img class="ProgressiveImage_preview" alt="{{ .Title }}"
-        src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
-        data-src="{{ .Site.BaseURL }}{{ $publicThumbnailUrl }}">
+  {{ with .Resources.GetByPrefix $banner }}
+    <div class="GalleryThumbnail_image">
+      {{ partial "thumbnail.html" (dict "resource" . "alt" $title) }}
     </div>
-  </div>
+  {{ end }}
 
   <h2 class="GalleryThumbnail_title">{{ $title }}</h2>
 </a>

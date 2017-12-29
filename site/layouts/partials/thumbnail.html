@@ -1,0 +1,17 @@
+{{ $preview := .resource.Fit "20x20" }}
+{{ $thumbnail := .resource.Fit "600x600" }}
+{{ $previewFile := (delimit (slice "resources/_gen/images/" $preview.Permalink) "") }}
+
+{{ $width := (div (mul (float .resource.Width) 300.0) (float .resource.Height))}}
+{{ $ratio := (mul (div (float .resource.Height) (float .resource.Width)) 100.0)}}
+
+<div
+  class="Photo Photo--waiting"
+  style="width:{{$width}}px;flex-grow:{{$width}}"
+>
+  <i style="padding-bottom:{{$ratio}}%"></i>
+  <img class="Photo_preview"
+    alt="{{ .alt }}"
+    src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
+    data-src="{{ $thumbnail.RelPermalink }}">
+</div>

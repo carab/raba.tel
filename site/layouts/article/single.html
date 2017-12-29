@@ -1,17 +1,14 @@
 {{ define "main" }}
+  {{ $title := .Title }}
+  {{ $banner := .Params.banner }}
   <section class="Article" itemscope itemtype="http://schema.org/Article">
-    <div class="Article_banner">
-      {{ $publicUrl := (delimit (slice .File.Dir "/photos/" .Params.banner) "") }}
-      {{ $previewFile := (delimit (slice "/static/generated/previews/" $publicUrl) "") }}
-      {{ $id := replace .Params.banner ".jpg" "" }}
-      <a class="ProgressiveImage ProgressiveImage--waiting" data-trigger="studio" href="#photo-{{ $id }}">
-        <img id="photo-{{ $id }}" class="ProgressiveImage_preview"
-          alt="{{ .Title }}"
-          src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
-          data-src="{{ .Site.BaseURL }}{{ $publicUrl }}"
-          data-src-full="{{ .Site.BaseURL }}{{ $publicUrl }}">
-      </a>
-    </div>
+    {{ with .Resources.GetByPrefix $banner }}
+      <div class="Article_banner">
+        {{ $filenameParts := split $banner "." }}
+        {{ $id := index $filenameParts 0 }}
+        {{ partial "photo.html" (dict "resource" . "alt" $title "id" $id) }}
+      </div>
+    {{ end }}
     <div class="PageTitle">
       <h1 class="Article_title" itemprop="name">{{ .Title }}</h1>
       <time class="Article_date" itemprop="date">Published on {{ .Date.Format "02/01/2006" }}</time>

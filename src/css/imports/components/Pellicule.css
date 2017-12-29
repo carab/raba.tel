@@ -1,0 +1,17 @@
+.Pellicule {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    margin: 0.2em !important;
+  }
+}
+
+.Pellicule-padded {
+  &:after {
+    content: '';
+    flex-grow: 999999999;
+  }
+}

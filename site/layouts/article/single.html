@@ -11,7 +11,7 @@
     {{ end }}
     <div class="PageTitle">
       <h1 class="Article_title" itemprop="name">{{ .Title }}</h1>
-      <time class="Article_date" itemprop="date">Published on {{ .Date.Format "02/01/2006" }}</time>
+      <time class="Article_date" itemprop="date">{{ i18n "article_publishedOn" (dict "date" (.Date.Format "02/01/2006")) }}</time>
     </div>
     <article class="Article_content" itemprop="articleBody">
        {{ .Content }}

@@ -1,0 +1,21 @@
+
+[article_readMore]
+  other = "Read more..."
+
+[article_publishedOn]
+  other = "Published on {{.date}}"
+
+[contact_title]
+  other = "Ask me anything"
+
+[contact_subject]
+  other = "New contact from camillerabatel.com"
+
+[contact_email]
+  other = "Your email"
+
+[contact_message]
+  other = "Your message"
+
+[contact_send]
+  other = "Send"

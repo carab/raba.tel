@@ -1,6 +1,7 @@
 {{ $title := .Title }}
 {{ $banner := .Params.banner }}
-<a href="{{ .Permalink }}" class="GalleryThumbnail">
+
+<a href="{{ .Permalink }}" class="GalleryThumbnail" title="{{ $title }}">
   {{ with .Resources.GetByPrefix $banner }}
     <div class="GalleryThumbnail_image">
       {{ partial "thumbnail.html" (dict "resource" . "alt" $title) }}

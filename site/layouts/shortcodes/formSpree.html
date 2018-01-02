@@ -1,18 +1,18 @@
 {{ if .Site.Params.formSpreeEmail }}
-  <h1>Ask me anything</h1>
+  <h1>{{ i18n "contact_title" }}</h1>
   <form class="Form" method="POST" action="//formspree.io/{{ .Site.Params.formSpreeEmail }}">
     <input type="hidden" name="_format" value="plain" />
     <input type="hidden" name="_language" value="{{ .Site.LanguageCode }}" />
-    <input type="hidden" name="_subject" value="New contact from camillerabatel.com" />
+    <input type="hidden" name="_subject" value="{{ i18n "contact_subject" }}" />
     <input type="hidden" name="_next" value="{{ ref $.Page "thank-you.md" }}" />
     <p>
-      <input type="email" name="email" placeholder="Your email">
+      <input type="email" name="email" placeholder="{{ i18n "contact_email" }}">
     </p>
     <p>
-      <textarea name="message" placeholder="Your message"></textarea>
+      <textarea name="message" placeholder="{{ i18n "contact_message" }}"></textarea>
     </p>
     <footer>
-      <button type="submit" class="Button Button-primary">Send</button>
+      <button type="submit" class="Button Button-primary">{{ i18n "contact_send" }}</button>
     </footer>
   </form>
 {{ end }}

@@ -1,6 +1,6 @@
 {{ $name := .resource.Name }}
 {{ $id := replace $name "photos/" "" }}
-{{ $id := replace $name ".jpg" "" }}
+{{ $id := replace $id ".jpg" "" }}
 {{ $title := .resource.Title }}
 {{ $preview := .resource.Fit "20x20" }}
 {{ $thumbnail := .resource.Fit "600x600" }}

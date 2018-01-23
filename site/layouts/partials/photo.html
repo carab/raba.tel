@@ -1,4 +1,6 @@
 {{ $name := .resource.Name }}
+{{ $id := replace $name "photos/" "" }}
+{{ $id := replace $name ".jpg" "" }}
 {{ $title := .resource.Title }}
 {{ $preview := .resource.Fit "20x20" }}
 {{ $thumbnail := .resource.Fit "600x600" }}
@@ -11,11 +13,11 @@
 <a
   class="Photo Photo--waiting"
   data-trigger="studio"
-  href="#photo-{{$name}}"
+  href="#photo-{{$id}}"
   style="width:{{$width}}px;max-width:{{$maxWidth}}px;flex-grow:{{$width}}"
 >
   <i style="padding-bottom:{{$ratio}}%"></i>
-  <img id="photo-{{$name}}" class="Photo_preview"
+  <img id="photo-{{$id}}" class="Photo_preview"
     alt="{{$title}}"
     src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
     data-src="{{ $thumbnail.RelPermalink | relURL }}"

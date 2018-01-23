@@ -1,12 +1,12 @@
 {{ define "main" }}
   {{ $title := .Title }}
   {{ $banner := .Params.banner }}
+  {{ $bannerPath := (print "photos/" $banner ".jpg") }}
+
   <section class="Article" itemscope itemtype="http://schema.org/Article">
-    {{ with .Resources.GetByPrefix $banner }}
+    {{ with .Resources.GetMatch $bannerPath }}
       <div class="Article_banner">
-        {{ $filenameParts := split $banner "." }}
-        {{ $id := index $filenameParts 0 }}
-        {{ partial "photo.html" (dict "resource" . "alt" $title "id" $id) }}
+        {{ partial "photo.html" (dict "resource" .) }}
       </div>
     {{ end }}
     <div class="PageTitle">

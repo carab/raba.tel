@@ -1,7 +1,7 @@
 {{ define "main" }}
   <div class="Container">
     <div class="ArticleList">
-      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "article") }}
+      {{ $paginator := .Paginate .Pages }}
       {{ range $paginator.Pages }}
         {{ .Render "summary"}}
       {{ end }}

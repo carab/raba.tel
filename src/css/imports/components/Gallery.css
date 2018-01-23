@@ -37,13 +37,13 @@
   }
 }
 
-.GalleryThumbnail {
+.GallerySummary {
   border: 0;
   transition: 200ms ease border-color;
   position: relative;
 }
 
-.GalleryThumbnail_title {
+.GallerySummary_title {
   font-weight: bold;
   font-size: inherit;
   text-align: center;
@@ -74,18 +74,18 @@
   }
 }
 
-.GalleryThumbnail_image {
+.GallerySummary_image {
   display: block;
   width: 100%;
 }
 
-.GalleryThumbnail {
+.GallerySummary {
   &:hover,
   &:focus {
     background: none;
     color: inherit;
 
-    & .GalleryThumbnail_title {
+    & .GallerySummary_title {
       opacity: 1;
     }
   }

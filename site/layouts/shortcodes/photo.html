@@ -1,8 +1,7 @@
 {{ $photo := .Get 0}}
-{{ $alt := .Get 1}}
-{{ $filenameParts := split $photo "." }}
-{{ $id := index $filenameParts 0 }}
 
-{{ with $.Page.Resources.GetByPrefix $photo }}
-  {{ partial "photo.html" (dict "resource" . "alt" $alt "id" $id) }}
+{{ $photoPath := (print "photos/" $photo ".jpg") }}
+
+{{ with $.Page.Resources.GetMatch $photoPath }}
+  {{ partial "photo.html" (dict "resource" .) }}
 {{ end }}

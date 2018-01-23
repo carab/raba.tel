@@ -1,6 +1,8 @@
+{{ $name := .resource.Name }}
+{{ $title := .resource.Title }}
 {{ $preview := .resource.Fit "20x20" }}
 {{ $thumbnail := .resource.Fit "600x600" }}
-{{ $previewFile := (delimit (slice "resources/_gen/images/" $preview.Permalink) "") }}
+{{ $previewFile := (print "resources/_gen/images" $preview.Permalink) }}
 
 {{ $width := (div (mul (float .resource.Width) 200.0) (float .resource.Height))}}
 {{ $maxWidth := (div (mul (float .resource.Width) 300.0) (float .resource.Height))}}
@@ -9,13 +11,13 @@
 <a
   class="Photo Photo--waiting"
   data-trigger="studio"
-  href="#photo-{{ .id }}"
+  href="#photo-{{$name}}"
   style="width:{{$width}}px;max-width:{{$maxWidth}}px;flex-grow:{{$width}}"
 >
   <i style="padding-bottom:{{$ratio}}%"></i>
-  <img id="photo-{{ .id }}" class="Photo_preview"
-    alt="{{ .alt }}"
+  <img id="photo-{{$name}}" class="Photo_preview"
+    alt="{{$title}}"
     src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
-    data-src="{{ $thumbnail.RelPermalink }}"
-    data-src-full="{{ .resource.RelPermalink }}">
+    data-src="{{ $thumbnail.RelPermalink | relURL }}"
+    data-src-full="{{ .resource.RelPermalink | relURL }}">
 </a>

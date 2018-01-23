@@ -2,8 +2,11 @@
 draft: false
 title: Launching the site
 date: 2017-08-22T15:00:00+02:00
-banner: 001.jpg
+banner: "001"
 description: My personal site is live !
+resources:
+- src: "photos/001.jpg"
+  title: "Launching the site"
 ---
 
 Hello there!

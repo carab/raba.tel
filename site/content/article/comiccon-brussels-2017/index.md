@@ -1,9 +1,12 @@
 ---
 draft: true
-title:  Comic Con Brussels 2017
+title: Comic Con Brussels 2017
 date: 2017-03-08T15:42:12+02:00
-banner: 02.jpg
+banner: "02"
 description: Experiencing in comic con event.
+resources:
+- src: "photos/02.jpg"
+  title: "Comic Con Brussels 2017"
 ---
 
 ===> ENLEVER les "you", c'est pas un cours mais un rappel d'expérience.

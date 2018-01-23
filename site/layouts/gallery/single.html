@@ -11,13 +11,8 @@
       </div>
     </div>
     <div class="Pellicule Pellicule-padded">
-      {{ range .Resources.ByType "image" }}
-        {{ $filepathParts := split .Permalink "/" }}
-        {{ $filepathParts := last 1 $filepathParts }}
-        {{ $filename := index $filepathParts 0 }}
-        {{ $filenameParts := split $filename "." }}
-        {{ $id := index $filenameParts 0 }}
-        {{ partial "photo.html" (dict "resource" . "alt" $title "id" $id) }}
+      {{ range .Resources.Match "photos/**.jpg" }}
+        {{ partial "photo.html" (dict "resource" .) }}
       {{ end }}
     </div>
   </div>

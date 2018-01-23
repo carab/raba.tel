@@ -3,7 +3,7 @@
 
   <div class="GalleryList">
   	{{ range (where .Site.RegularPages "Type" "gallery").ByWeight }}
-  		{{ .Render "thumbnail"}}
+  		{{ .Render "summary"}}
   	{{ end }}
   </div>
 

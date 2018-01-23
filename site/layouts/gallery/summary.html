@@ -1,0 +1,14 @@
+{{ $title := .Title }}
+{{ $permalink := .Permalink }}
+{{ $banner := .Params.banner }}
+{{ $bannerPath := (print "photos/" $banner ".jpg") }}
+
+<a href="{{ $permalink }}" class="GallerySummary" title="{{ $title }}">
+  {{ with .Resources.GetMatch $bannerPath }}
+    <div class="GallerySummary_image">
+      {{ partial "thumbnail.html" (dict "resource" .) }}
+    </div>
+  {{ end }}
+
+  <h2 class="GallerySummary_title">{{ $title }}</h2>
+</a>

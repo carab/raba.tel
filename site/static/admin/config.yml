@@ -1,37 +1,37 @@
 backend:
   name: git-gateway
   branch: wip-netlifycms
-  media_folder: "static/images/uploads"
-  public_folder: "/images/uploads"
-  collections:
-    - name: "article"
-      label: "Article"
-      folder: "site/content/article"
-      create: true
-      slug: "{{slug}}"
-      fields:
-        - label: "Draft"
-          name: "draft"
-          widget: "boolean"
-          default: true
-        - label: "Title"
-          name: "title"
-          widget: "string"
-        - label: "Description"
-          name: "description"
-          widget: "string"
-        - label: "Publish Date"
-          name: "date"
-          widget: "datetime"
-        - label: "Banner"
-          name: "banner"
-          widget: "image"
-        - label: "Resources"
-          name: "resources"
-          widget: "list"
-          fields:
-            - {label: Title, name: title, widget: string}
-            - {label: Source, name: src, widget: image}
-        - label: "Content"
-          name: "content"
-          widget: "markdown"
+media_folder: "site/static/images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "article"
+    label: "Article"
+    folder: "site/content/article"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: true
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+      - label: "Banner"
+        name: "banner"
+        widget: "image"
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Source, name: src, widget: image}
+      - label: "Content"
+        name: "content"
+        widget: "markdown"

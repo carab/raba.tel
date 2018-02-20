@@ -78,4 +78,6 @@ resources:
   params: {weight: 125}
 ---
 
-Below are some photos taken from anywhere at anytime, during my trips abroad or just next to the home.
+Public parks in cities have a whole lot of wildlife, essentially birds and mostly squirrels. Below are some them, taken from the biggest park in Lyon : the **Parc de la Tête d'Or**.
+
+Next time you wander there, take a time to listen at the birds and try to find them :)

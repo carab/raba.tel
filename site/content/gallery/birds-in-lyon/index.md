@@ -2,7 +2,7 @@
 draft: false
 title: Birds in Lyon
 date: 2017-08-22T16:00:00+02:00
-banner: 1
+banner: photos/moineau_sunrise.jpg
 description: Birds found in Lyon's "Parc de la Tête d'Or" public park.
 weight: 1
 menu:

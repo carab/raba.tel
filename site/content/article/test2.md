@@ -1,11 +1,12 @@
 ---
 draft: true
-title: Test
-description: Ma description
-date: 2018-02-12T18:45:43.351Z
+title: test2
+description: rez
+date: 2018-02-12T19:55:52.945Z
 banner: /images/uploads/dscf2687.jpg
 resources:
   - src: /images/uploads/dscf2687.jpg
-content: Bouh *bouh*
+    title: testest
+content: Hop
 ---
 

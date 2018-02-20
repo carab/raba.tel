@@ -1,10 +1,10 @@
-baseurl = "/"
+baseURL = "/"
+relativeURLs = true
 languageCode = "en"
 googleAnalytics = "UA-78711157-2"
 buildDrafts = false
 title = "Camille Rabatel"
 newContentEditor = "atom"
-relativeURLs = true
 
 [blackfriday]
   extensions = ["hardLineBreak"]

@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: wip-netlifycms
+  name: github
+  repo: carab/raba.tel
 media_folder: "site/static/images/uploads"
 public_folder: "/images/uploads"
 collections:
@@ -8,7 +8,7 @@ collections:
     label: "Article"
     folder: "site/content/article"
     create: true
-    slug: "{{slug}}"
+    slug: "{{slug}}/index"
     fields:
       - label: "Draft"
         name: "draft"

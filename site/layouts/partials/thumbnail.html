@@ -4,6 +4,11 @@
 {{ $thumbnail := .resource.Fit "600x600" }}
 {{ $previewFile := (print "resources/_gen/images" $preview.Permalink) }}
 
+{{ $previewSrc := $preview.RelPermalink }}
+{{ if fileExists $previewFile }}
+  {{ $previewSrc := (print "data:image/jpg;base64," (base64Encode (readFile $previewFile))) }}
+{{ end }}
+
 {{ $width := (div (mul (float .resource.Width) 300.0) (float .resource.Height))}}
 {{ $ratio := (mul (div (float .resource.Height) (float .resource.Width)) 100.0)}}
 
@@ -14,6 +19,6 @@
   <i style="padding-bottom:{{$ratio}}%"></i>
   <img class="Photo_preview"
     alt="{{$title}}"
-    src="data:image/jpg;base64,{{base64Encode (readFile $previewFile)}}"
-    data-src="{{ $thumbnail.RelPermalink | relURL }}">
+    src="{{ $previewSrc }}"
+    data-src="{{ $thumbnail.RelPermalink }}">
 </div>

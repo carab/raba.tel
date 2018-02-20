@@ -1,12 +1,12 @@
-const TIMEOUT_ONLOAD = 500;
-const HAS_HISTORY = (window.history && window.history.pushState);
+const TIMEOUT_ONLOAD = 500
+const HAS_HISTORY = (window.history && window.history.pushState)
 
 class Studio {
   constructor() {
-    const studio = $('.Studio');
+    const studio = $('.Studio')
 
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
+    this.next = this.next.bind(this)
+    this.previous = this.previous.bind(this)
 
     this.dom = {
       window: window,
@@ -15,227 +15,227 @@ class Studio {
       gallery: $('.Studio_gallery', studio),
       loader: $('.Studio_loader', studio),
       image: $('.Studio_image', studio),
+      title: $('.Studio_title', studio),
       close: $('.Studio_close', studio),
       previous: $('.Studio_previous', studio),
       next: $('.Studio_next', studio),
-    };
+    }
 
-    this.images = $$('[href^="#"][data-trigger="studio"] img[id]');
-    this.imageCache = {};
-    this.currentIndex = undefined;
+    this.images = $$('[href^="#"][data-trigger="studio"] img[id]')
+    this.imageCache = {}
+    this.currentIndex = undefined
 
-    this.attach();
+    this.attach()
 
     setTimeout(() => {
-      this.handle(this.dom.window.location.hash);
-    }, TIMEOUT_ONLOAD);
+      this.handle(this.dom.window.location.hash)
+    }, TIMEOUT_ONLOAD)
   }
 
   attach() {
     this.dom.window.addEventListener('click', (event) => {
-      const link = event.target.closest('[href^="#"][data-trigger="studio"]');
+      const link = event.target.closest('[href^="#"][data-trigger="studio"]')
 
       if (link != null) {
-        event.preventDefault();
-        const hash = link.getAttribute('href');
-        this.handle(hash);
+        event.preventDefault()
+        const hash = link.getAttribute('href')
+        this.handle(hash)
       }
-    });
+    })
 
     if (HAS_HISTORY) {
       this.dom.window.addEventListener('popstate', (event) => {
-        const {hash} = this.dom.window.location;
-        this.handle(hash);
-      });
+        const {hash} = this.dom.window.location
+        this.handle(hash)
+      })
     } else {
       this.dom.window.addEventListener('hashchange', (event) => {
-        const {hash} = this.dom.window.location;
-        this.handle(hash);
-      });
+        const {hash} = this.dom.window.location
+        this.handle(hash)
+      })
     }
 
     this.dom.document.addEventListener('keyup', (event) => {
       // Escape
-      if (event.keyCode == 27) {
-        this.close();
+      if (27 === event.keyCode) {
+        this.close()
       }
 
       // Left arrow
-      if (event.keyCode == 37) {
-        this.previous();
+      if (37 === event.keyCode) {
+        this.previous()
       }
 
       // Right arrow
-      if (event.keyCode == 39) {
-        this.next();
+      if (39 === event.keyCode) {
+        this.next()
       }
-    });
+    })
 
     this.dom.studio.addEventListener('click', (event) => {
       if (
-        event.target == this.dom.studio
-        || event.target == this.dom.image
+        event.target === this.dom.studio
+        || event.target === this.dom.image
       ) {
-        this.close();
+        this.close()
       }
-    });
+    })
 
     this.dom.close.addEventListener('click', (event) => {
-      this.close();
-    });
+      this.close()
+    })
 
     this.dom.previous.addEventListener('click', (event) => {
-      this.previous();
-    });
+      this.previous()
+    })
 
     this.dom.next.addEventListener('click', (event) => {
-      this.next();
-    });
+      this.next()
+    })
 
-    let nextOrPrevious = this.next;
+    let nextOrPrevious = this.next
     this.dom.image.addEventListener('click', (event) => {
-      if (this.currentIndex == 0) {
-        nextOrPrevious = this.next;
-      } else if ((this.currentIndex + 1) == this.images.length) {
-        nextOrPrevious = this.previous;
+      if (0 === this.currentIndex) {
+        nextOrPrevious = this.next
+      } else if ((this.currentIndex + 1) === this.images.length) {
+        nextOrPrevious = this.previous
       }
 
-      nextOrPrevious();
-    });
+      nextOrPrevious()
+    })
 
-    const gallery = new Hammer(this.dom.gallery);
+    const gallery = new Hammer(this.dom.gallery)
     gallery.on('panright', (event) => {
-      //console.log(event);
-    });
+      //console.log(event)
+    })
 
     gallery.on('panleft', (event) => {
-      //console.log(event);
-    });
+      //console.log(event)
+    })
 
     gallery.on('swiperight', (event) => {
-      this.previous();
-    });
+      this.previous()
+    })
 
     gallery.on('swipeleft', (event) => {
-      this.next();
-    });
+      this.next()
+    })
   }
 
   handle(hash) {
-    const {window} = this.dom;
-
     if (hash.length > 1) {
-      const targetImage = $('[href^="#"][data-trigger="studio"] img' + hash);
+      const targetImage = $('[href^="#"][data-trigger="studio"] img' + hash)
 
       if (targetImage) {
-        this.show(targetImage);
-        return;
+        this.show(targetImage)
+        return
       }
     }
 
-    if (this.currentIndex != undefined) {
-      this.close();
+    if (undefined !== this.currentIndex) {
+      this.close()
     }
   }
 
   close() {
-    const {window, studio} = this.dom;
+    const {window, studio} = this.dom
 
-    studio.setAttribute('aria-hidden', 'true');
+    studio.setAttribute('aria-hidden', 'true')
 
     if (HAS_HISTORY) {
       window.history.pushState('', '', window.location.pathname)
     } else {
-      window.location.hash = '';
+      window.location.hash = ''
     }
 
-    this.currentIndex = undefined;
+    this.currentIndex = undefined
   }
 
   open() {
-    const currentImage = this.images[this.currentIndex];
+    const currentImage = this.images[this.currentIndex]
 
     if (currentImage) {
-      const src = currentImage.getAttribute('data-src-full');
-      let img = this.imageCache[src];
+      const src = currentImage.getAttribute('data-src-full')
+      let img = this.imageCache[src]
 
-      if (img == undefined) {
-        this.dom.loader.setAttribute('aria-hidden', 'false');
+      if (undefined === img) {
+        this.dom.loader.setAttribute('aria-hidden', 'false')
 
-        img = new Image();
-        img.src = src;
-        img.alt = currentImage.alt;
-        this.imageCache[src] = img;
+        img = new Image()
+        img.src = src
+        img.alt = currentImage.alt
+        this.imageCache[src] = img
       }
 
       const setImage = () => {
-        this.dom.image.innerHTML = '';
-        this.dom.loader.setAttribute('aria-hidden', 'true');
-        this.dom.image.appendChild(img);
-      };
+        this.dom.image.innerHTML = ''
+        this.dom.loader.setAttribute('aria-hidden', 'true')
+        this.dom.image.appendChild(img)
+        this.dom.title.textContent = img.alt
+      }
 
       if (img.complete) {
-        setImage();
+        setImage()
       } else {
-        this.dom.image.innerHTML = '';
-        img.onload = setImage;
+        this.dom.image.innerHTML = ''
+        img.onload = setImage
       }
 
       // Show studio and update arrows
-      this.dom.studio.setAttribute('aria-hidden', 'false');
+      this.dom.studio.setAttribute('aria-hidden', 'false')
 
       if (this.currentIndex <= 0) {
-        this.dom.previous.setAttribute('disabled', '');
+        this.dom.previous.setAttribute('disabled', '')
       } else {
-        this.dom.previous.removeAttribute('disabled');
+        this.dom.previous.removeAttribute('disabled')
       }
 
       if (this.currentIndex >= this.images.length - 1) {
-        this.dom.next.setAttribute('disabled', '');
+        this.dom.next.setAttribute('disabled', '')
       } else {
-        this.dom.next.removeAttribute('disabled');
+        this.dom.next.removeAttribute('disabled')
       }
     }
   }
 
   previous() {
-    const previousImage = this.images[this.currentIndex - 1];
+    const previousImage = this.images[this.currentIndex - 1]
 
     if (previousImage) {
-      this.show(previousImage);
+      this.show(previousImage)
     }
   }
 
   next() {
-    const nextImage = this.images[this.currentIndex + 1];
+    const nextImage = this.images[this.currentIndex + 1]
 
     if (nextImage) {
-      this.show(nextImage);
+      this.show(nextImage)
     }
   }
 
   show(image) {
-    const {window} = this.dom;
-    const hash = '#' + image.id;
+    const {window} = this.dom
+    const hash = '#' + image.id
 
-    if (window.location.hash != hash) {
+    if (hash !== window.location.hash) {
       if (HAS_HISTORY) {
-        window.history.pushState('', '', window.location.pathname + hash);
+        window.history.pushState('', '', window.location.pathname + hash)
       } else {
-        window.location.hash = hash;
+        window.location.hash = hash
       }
     }
 
     this.images.forEach((_image, index) => {
-      if (image.id == _image.id) {
-        this.currentIndex = index;
+      if (image.id === _image.id) {
+        this.currentIndex = index
       }
-    });
+    })
 
-    this.open();
+    this.open()
   }
 }
 
 $.ready().then(function() {
-  const studio = new Studio();
-});
+  const studio = new Studio()
+})

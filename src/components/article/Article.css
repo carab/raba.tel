@@ -1,0 +1,47 @@
+
+
+.Article {
+  width: 100%;
+  max-width: 90rem;
+  padding: 0 5vw;
+  margin: auto;
+
+  @media (--md-viewport) {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+
+.Article_date {
+  color: #ddd;
+  font-size: 1.4rem;
+  display: block;
+  text-align: center;
+}
+
+.Article_banner,
+.Article_content .Photo,
+.Article_content .Pellicule {
+  margin: 0 -5vw;
+
+  @media (--md-viewport) {
+    margin-left: -10rem;
+    margin-right: -10rem;
+  }
+}
+
+.Article_banner {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.Article_content .Photo,
+.Article_content .Pellicule {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.Article_content {
+  text-align: justify;
+}
+

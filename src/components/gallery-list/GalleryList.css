@@ -1,0 +1,38 @@
+.GalleryList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  margin: 4rem 0;
+
+  & > * {
+    width: 50%;
+    display: block;
+    padding: 0.5rem;
+  }
+
+  @media (--md-viewport) {
+    margin-left: -10px;
+    margin-right: -10px;
+
+    & > * {
+      //width: 33.33%;
+      padding: 10px;
+    }
+  }
+
+  @media (--lg-viewport) {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+
+    & > * {
+      //width: 33.33%;
+      display: block;
+    }
+  }
+}

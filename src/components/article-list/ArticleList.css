@@ -1,0 +1,18 @@
+.ArticleList {
+  & > * {
+    display: block;
+    margin: 20px 0 80px;
+  }
+
+  @media (--md-viewport) {
+    & > * {
+      //width: 50%;
+    }
+  }
+
+  @media (--lg-viewport) {
+    & > * {
+      //width: 33.33%;
+    }
+  }
+}

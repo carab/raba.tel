@@ -1,0 +1,34 @@
+
+.Photo {
+  overflow: hidden;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  
+  &[role="button"] {
+    cursor: zoom-in;
+  }
+
+  & img {
+    will-change: transform;
+    transition: 0.2s ease-out transform, opacity 0.5s ease 0s !important;
+  }
+}
+
+
+:not(.Pellicule) > .Photo {
+  /* Reset width for photos which are not in a pellicule*/
+  width: auto !important;
+  max-width: none !important;
+}
+
+a,
+.Photo[role="button"] {
+  &:hover,
+  &:focus {
+    & img {
+      transform: scale(1.02);
+    }
+  }
+}

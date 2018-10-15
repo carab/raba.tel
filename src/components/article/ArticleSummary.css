@@ -1,0 +1,31 @@
+.ArticleSummary {
+
+}
+
+.ArticleSummary_more {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.ArticleSummary_title {
+  text-align: center;
+  line-height: 1.3;
+  margin: 0 0 3rem;
+  text-transform: uppercase;
+}
+
+.ArticleSummary_date {
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.ArticleSummary_banner {
+  display: block;
+  border: 0;
+  margin-bottom: 1rem;
+}
+
+.ArticleSummary_description {
+  text-align: center;
+  font-size: 1.4rem;
+}

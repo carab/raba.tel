@@ -1,7 +1,0 @@
-{{ $photo := .Get 0}}
-
-{{ $photoPath := (print "photos/" $photo ".jpg") }}
-
-{{ with $.Page.Resources.GetMatch $photoPath }}
-  {{ partial "photo.html" (dict "resource" .) }}
-{{ end }}

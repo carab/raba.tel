@@ -1,0 +1,38 @@
+.Gallery {
+
+}
+
+.Gallery_content {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.Gallery_images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  & > * {
+    padding: 5px;
+  }
+}
+
+.Gallery_image {
+  border: 0;
+
+  & img {
+    width: auto;
+    height: 20rem;
+    height: 32vh;
+
+    @media (--md-viewport) {
+      //height: 40vh;
+    }
+
+    @media (--lg-viewport) {
+      //height: 40vh;
+    }
+  }
+}

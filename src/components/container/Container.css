@@ -1,0 +1,22 @@
+@import "../layout/vars.css";
+
+.Container {
+  padding: 0 2rem;
+
+  @media (--md-viewport) {
+    padding: 0;
+    width: 600px;
+    margin: auto;
+  }
+}
+
+.Containment {
+  @media (--lg-viewport) {
+    width: 900px;
+    max-width: 100%;
+  }
+
+  @media (--xl-viewport) {
+    width: 1150px;
+  }
+}

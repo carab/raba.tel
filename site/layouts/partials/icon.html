@@ -1,4 +1,0 @@
-{{ $path := (delimit (slice "/static/icons/" . ".svg") "") }}
-<i class="Icon Icon-{{ . }}">
-  {{ readFile $path | safeHTML }}
-</i>

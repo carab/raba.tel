@@ -1,0 +1,24 @@
+
+.Page {
+  padding-top: var(--height-sm-header);
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+
+  @media (--md-viewport) {
+    padding-top: var(--height-md-header);
+  }
+}
+
+.Page_separator {
+  height: 1px;
+  border-bottom: 1px solid;
+  width: 44%;
+  margin: 8rem auto;
+}

@@ -8,7 +8,7 @@
   margin: 4rem 0;
 
   & > * {
-    width: 50%;
+    flex-basis: 25em;
     display: block;
     padding: 0.5rem;
   }
@@ -18,20 +18,14 @@
     margin-right: -10px;
 
     & > * {
-      //width: 33.33%;
+      /* width: 33.33%; */
       padding: 10px;
     }
   }
 
   @media (--lg-viewport) {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0;
-    padding-right: 0;
-
     & > * {
-      //width: 33.33%;
+      /* width: 33.33%; */
       display: block;
     }
   }

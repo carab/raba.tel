@@ -94,6 +94,7 @@
     max-width: 100%;
     will-change: opacity, transform;
     animation: reveal 0.5s ease-out;
+    object-fit: contain;
   }
 }
 

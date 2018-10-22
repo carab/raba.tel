@@ -37,9 +37,15 @@
 
 .Article_content .Photo,
 .Article_content .Pellicule {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
+
+
+.Article_content .Photo {
+  max-width: none !important;
+}
+
 
 .Article_content {
   text-align: justify;

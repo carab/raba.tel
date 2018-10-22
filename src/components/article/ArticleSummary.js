@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import { FormattedMessage } from 'react-intl'
 
 import Photo from '../photo/Photo'
 import DateFormat from '../utils/DateFormat'
@@ -43,7 +44,7 @@ export default class ArticleSummary extends Component {
           >
             {description + ' '}
             <Link className="ArticleSummary_more" to={slug}>
-              Read more
+              <FormattedMessage id="article.read_more" />
             </Link>
           </article>
         ) : null}

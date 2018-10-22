@@ -121,6 +121,7 @@ export const query = graphql`
         title
         date
         description
+        locale
         banner {
           childImageSharp {
             original {

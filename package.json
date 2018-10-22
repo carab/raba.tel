@@ -37,6 +37,7 @@
     "react-event-listener": "^0.6.4",
     "react-hammerjs": "^1.0.1",
     "react-helmet": "^5.2.0",
+    "react-intl": "^2.7.1",
     "rehype-react": "^3.0.3"
   },
   "keywords": [

@@ -8,7 +8,7 @@ export default function Icon({ name, className, ...props }) {
   const Icon = require(`../../images/icons/${name}.svg`)
 
   return (
-    <i className={`Icon Icon-${name} ${className}`} {...props}>
+    <i className={`Icon Icon-${name} ${className ? className : ''}`} {...props}>
       <Icon />
     </i>
   )

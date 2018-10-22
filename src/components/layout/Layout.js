@@ -6,6 +6,7 @@ import { Location } from '@reach/router'
 
 import withPage from '../../hoc/withPage'
 import Store from '../store/Store'
+import Locale from '../locale/Locale'
 import Page from '../page/Page'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
@@ -15,6 +16,7 @@ import Studio from '../studio/Studio'
 
 import './Layout.css'
 import avatar from '../../images/avatar.jpg'
+
 
 export default withPage(
   class Layout extends Component {
@@ -30,45 +32,48 @@ export default withPage(
         page && page.banner
           ? page.banner.childImageSharp.original.src
           : undefined
-
+      const locale = page && page.locale ? page.locale : site.locale
+      
       return (
-        <Store>
-          <Helmet>
-            <html lang={site.locale} />
-            <meta charSet="utf-8" />
-            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1, shrink-to-fit=no"
-            />
-            <title>
-              {title ? title + ' | ' : ''}
-              {site.title}
-            </title>
-            <meta name="description" content={site.description} />
-            <meta name="author" content={site.author} />
-            <meta name="keywords" content={site.keywords} />
-            <link rel="canonical" href={location.pathname} />
-            <meta property="og:locale" content={site.locale} />
-            <meta property="og:title" content={title ? title : site.title} />
-            <meta
-              property="og:description"
-              content={description ? description : site.description}
-            />
-            <meta property="og:type" content="article" />
-            <meta property="og:url" content={location.pathname} />
-            <meta property="og:site_name" content={site.title} />
-            <meta property="og:image" content={image ? image : avatar} />
-          </Helmet>
-          <Page>
-            <Main>{children}</Main>
-            <Header title={site.title} socials={site.socials}>
-              <Navigation />
-            </Header>
-            <Footer author={site.author} socials={site.socials} />
-            <Studio />
-          </Page>
-        </Store>
+        <Locale locale={locale}>
+          <Store>
+            <Helmet>
+              <html lang={locale} />
+              <meta charSet="utf-8" />
+              <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1, shrink-to-fit=no"
+              />
+              <title>
+                {title ? title + ' | ' : ''}
+                {site.title}
+              </title>
+              <meta name="description" content={site.description} />
+              <meta name="author" content={site.author} />
+              <meta name="keywords" content={site.keywords} />
+              <link rel="canonical" href={location.pathname} />
+              <meta property="og:locale" content={site.locale} />
+              <meta property="og:title" content={title ? title : site.title} />
+              <meta
+                property="og:description"
+                content={description ? description : site.description}
+              />
+              <meta property="og:type" content="article" />
+              <meta property="og:url" content={location.pathname} />
+              <meta property="og:site_name" content={site.title} />
+              <meta property="og:image" content={image ? image : avatar} />
+            </Helmet>
+            <Page>
+              <Main>{children}</Main>
+              <Header title={site.title} socials={site.socials}>
+                <Navigation />
+              </Header>
+              <Footer author={site.author} socials={site.socials} />
+              <Studio />
+            </Page>
+          </Store>
+        </Locale>
       )
     }
 

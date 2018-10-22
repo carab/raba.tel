@@ -1,5 +1,18 @@
 import { format } from 'date-fns'
+import { fr } from 'date-fns/locale'
 
-export default function DateFormat({ date, preset }) {
-  return format(date, preset)
+const locales = { fr }
+
+export function dateFormat({ date, preset, locale, options = {} }) {
+  const computedOptions = { ...options }
+  
+  if (locale && locales[locale]) {
+    computedOptions.locale = locales[locale]
+  }
+
+  return format(date, preset, computedOptions)
+}
+
+export default function DateFormat(props) {
+  return dateFormat(props)
 }

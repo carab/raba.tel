@@ -24,24 +24,24 @@ export default function Footer({
         >
           Madebyoliver
         </a>
-        ,{/* close */}
+        ,{/* close */}{' '}
         <a href="https://www.flaticon.com/authors/google" title="Google">
           Google
         </a>
-        ,{/* next, previous */}
+        ,{/* next, previous */}{' '}
         <a
           href="https://www.flaticon.com/authors/gregor-cresnar"
           title="Gregor Cresnar"
         >
           Gregor Cresnar
         </a>
-        ,{/* 500px */}
+        ,{/* 500px */}{' '}
         {fivehundredpxUrl ? (
           <a href="http://www.freepik.com" title="Freepik">
             Freepik,
           </a>
         ) : null}
-        {/* Facebook */}
+        {/* Facebook */}{' '}
         {facebookUrl ? (
           <a
             href="https://www.flaticon.com/authors/simpleicon"
@@ -50,13 +50,13 @@ export default function Footer({
             SimpleIcon,
           </a>
         ) : null}
-        {/* Instagram */}
+        {/* Instagram */}{' '}
         {instagramUrl ? (
           <a href="http://www.freepik.com" title="Freepik">
-            Freepik,
+            Freepik
           </a>
         ) : null}
-        {/* Twitter */}
+        ,{/* Twitter */}{' '}
         {twitterUrl ? (
           <a
             href="https://www.flaticon.com/authors/elegant-themes"
@@ -65,8 +65,11 @@ export default function Footer({
             Elegant Themes,
           </a>
         ) : null}
-        {/* hamburger */}
-        and{' '}
+        {/* plus and close2 */}{' '}
+        <a href="https://www.flaticon.com/authors/lyolya" title="Lyolya">
+          Lyolya
+        </a>{' '}
+        ,{/* hamburger */} and{' '}
         <a
           href="https://www.flaticon.com/authors/chris-veigt"
           title="Chris Veigt"

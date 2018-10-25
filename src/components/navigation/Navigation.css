@@ -14,7 +14,10 @@
     margin: 0;
     padding: 0;
     position: relative;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-top: 1px solid var(--color-opposite);
   }
 
   & a {
@@ -26,9 +29,17 @@
     font-size: 2rem;
     text-align: right;
     padding: 6px 20px;
-    border-top: 1px solid var(--color-opposite);
     background: var(--color-primary);
     color: var(--color-opposite);
+    flex-grow: 1;
+  }
+
+  & button {
+    background: var(--color-primary);
+    color: var(--color-opposite);
+    border: 0;
+    border-left: 1px solid;
+    width: 2.5em;
   }
 
   & [aria-hidden] {
@@ -36,13 +47,14 @@
     color: var(--color-primary);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
     transition: 200ms ease opacity;
+    flex-basis: 100%;
 
     & a {
       border: 0;
       font-size: 0.9em;
       color: inherit;
       background: inherit;
-      padding: 6px 50px;
+      padding: 0.5em 1.5em;
     }
   }
 
@@ -64,6 +76,11 @@
 
     & [role="separator"] {
       display: block;
+    }
+      
+    & li {
+      display: block;
+      border-top: 0;
     }
 
     & a {
@@ -98,6 +115,10 @@
       }
     }
 
+    & button {
+      display: none;
+    }
+
     & [aria-hidden] {
       position: absolute;
       z-index: var(--zindex-navigation);
@@ -106,7 +127,7 @@
       display: block;
       background: var(--color-primary);
       color: var(--color-opposite);
-      padding: 3px 8px;
+      padding: 0.5em 1em;
       text-align: left;
 
       & a {

@@ -1,8 +1,8 @@
 ---
 layout: about
 title: About
-menu:
-  main: 100
+navigation:
+  weight: -1
 ---
 
 Hello there!

@@ -1,7 +1,8 @@
 ---
 title: Articles
-menu:
-  main: 95
+index: true
+navigation:
+  weight: 1
 ---
 
 <article-list></article-list>

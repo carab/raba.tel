@@ -6,6 +6,7 @@
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require(`path`)
+const fs = require(`fs`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -17,18 +18,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: slug,
     })
 
-    const section = slug.split('/')[1]
+    const parts = slug.split('/')
+    const section = parts[1]
     createNodeField({
       node,
       name: `section`,
       value: section,
-    })
-
-    const index = slug === '/' || `/${section}/` === slug
-    createNodeField({
-      node,
-      name: `index`,
-      value: index,
     })
   }
 }
@@ -38,15 +33,16 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark(
-          filter: {
-            frontmatter: { draft: { ne: true } }
-          }
-        ) {
+        allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
           edges {
             node {
               fields {
                 slug
+                section
+              }
+              frontmatter {
+                layout
+                index
               }
             }
           }
@@ -56,9 +52,10 @@ exports.createPages = ({ graphql, actions }) => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
           path: node.fields.slug,
-          component: path.resolve(`./src/templates/page.js`),
+          component: resolveTemplate(node),
           context: {
             slug: node.fields.slug,
+            regex: `/${node.fields.slug}.+/`,
           },
         })
       })
@@ -66,4 +63,32 @@ exports.createPages = ({ graphql, actions }) => {
       resolve()
     })
   })
+}
+
+function resolveTemplate(node) {
+  let template = 'default'
+
+  if (node.frontmatter.layout) {
+    template = node.frontmatter.layout
+  } else if (node.fields.section) {
+    if (node.frontmatter.index) {
+      template = node.fields.section + '-index'
+    } else {
+      template = node.fields.section
+    }
+  } else if (node.frontmatter.index) {
+    template = 'index'
+  }
+
+  let file = resolvePath(template)
+
+  if (fs.existsSync(file)) {
+    return file
+  }
+
+  return resolvePath('default')
+}
+
+function resolvePath(template) {
+  return path.resolve(`./src/templates/${template}.js`)
 }

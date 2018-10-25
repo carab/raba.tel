@@ -1,6 +1,7 @@
 import React from 'react'
 import rehypeReact from 'rehype-react'
 
+import withPage from '../../hoc/withPage'
 import ContactForm from '../contact-form/ContactForm'
 import Pellicule from '../pellicule/Pellicule'
 import Photo from '../photo/Photo'
@@ -12,8 +13,8 @@ const renderAst = new rehypeReact({
   components: {
     'contact-form': ContactForm,
     'photo-list': Pellicule,
-    'article-list': ArticleList,
-    'gallery-list': GalleryList,
+    'article-list': withPage(({page}) => <ArticleList articles={page.articles}/>),
+    'gallery-list': withPage(({page}) => <GalleryList galleries={page.galleries}/>),
     img: Img,
   },
 }).Compiler

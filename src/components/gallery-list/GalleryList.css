@@ -14,9 +14,6 @@
   }
 
   @media (--md-viewport) {
-    margin-left: -10px;
-    margin-right: -10px;
-
     & > * {
       /* width: 33.33%; */
       padding: 10px;

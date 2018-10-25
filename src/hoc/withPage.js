@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { PageContext } from '../templates/page'
+import { PageContext } from '../components/layout/Layout'
 
 export default function withPage(WrappedComponent) {
   return class WithPage extends Component {

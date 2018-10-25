@@ -22,7 +22,7 @@ export default class Gallery extends Component {
           <div className="Gallery_content">{children}</div>
         </Container>
         <Pellicule className="Pellicule Pellicule-padded">
-          {resources.map(resource => (
+          {resources && resources.map(resource => (
             <Photo
               key={resource.src.id}
               {...resource.src.childImageSharp}

@@ -92,8 +92,8 @@ module.exports = {
                 limit: 1000,
                 sort: { order: DESC, fields: [frontmatter___date] },
                 filter: {
-                  frontmatter: { draft: { ne: true } }
-                  fields: { section: { eq: "article" }, index: { eq: false } }
+                  frontmatter: { draft: { ne: true }, index: { ne: true } }
+                  fields: { section: { eq: "article" } }
                 }
               ) {
                 edges {

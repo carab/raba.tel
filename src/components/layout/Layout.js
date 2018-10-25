@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { Location } from '@reach/router'
 
-import withPage from '../../hoc/withPage'
 import Store from '../store/Store'
 import Locale from '../locale/Locale'
 import Page from '../page/Page'
@@ -17,24 +16,23 @@ import Studio from '../studio/Studio'
 import './Layout.css'
 import avatar from '../../images/avatar.jpg'
 
+export const PageContext = React.createContext()
 
-export default withPage(
-  class Layout extends Component {
-    static propTypes = {
-      children: PropTypes.node.isRequired,
-      page: PropTypes.object,
-    }
+export default class Layout extends Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    page: PropTypes.object,
+  }
 
-    renderPage(page, children, site, location) {
-      const title = page ? page.title : undefined
-      const description = page ? page.description : undefined
-      const image =
-        page && page.banner
-          ? page.banner.childImageSharp.original.src
-          : undefined
-      const locale = page && page.locale ? page.locale : site.locale
-      
-      return (
+  renderPage(page, children, site, location) {
+    const title = page ? page.title : undefined
+    const description = page ? page.description : undefined
+    const image =
+      page && page.banner ? page.banner.childImageSharp.original.src : undefined
+    const locale = page && page.locale ? page.locale : site.locale
+
+    return (
+      <PageContext.Provider value={page}>
         <Locale locale={locale}>
           <Store>
             <Helmet>
@@ -74,38 +72,33 @@ export default withPage(
             </Page>
           </Store>
         </Locale>
-      )
-    }
-
-    render() {
-      const { page, children } = this.props
-
-      return (
-        <Location>
-          {({ location }) => (
-            <StaticQuery
-              query={graphql`
-                query SiteQuery {
-                  site {
-                    ...SiteFragment
-                  }
-                }
-              `}
-              render={data =>
-                this.renderPage(
-                  page,
-                  children,
-                  data.site.siteMetadata,
-                  location
-                )
-              }
-            />
-          )}
-        </Location>
-      )
-    }
+      </PageContext.Provider>
+    )
   }
-)
+
+  render() {
+    const { page, children } = this.props
+
+    return (
+      <Location>
+        {({ location }) => (
+          <StaticQuery
+            query={graphql`
+              query SiteQuery {
+                site {
+                  ...SiteFragment
+                }
+              }
+            `}
+            render={data =>
+              this.renderPage(page, children, data.site.siteMetadata, location)
+            }
+          />
+        )}
+      </Location>
+    )
+  }
+}
 
 export const siteFragment = graphql`
   fragment SiteFragment on Site {

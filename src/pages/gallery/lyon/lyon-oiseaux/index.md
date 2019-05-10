@@ -107,8 +107,8 @@ resources:
   src: oiesauvage3.jpg
 - title: "Pélican à dos rosé (semi-domestique)"
   src: pelicanrose1.jpg
-- title: "Aigrette garzette"
-  src: aigrettegarzette1.jpg
+- title: "Hérons garde-boeufs"
+  src: herongardeboeufs1.jpg
 ---
 
 Lyon est parsemée de nombreux espaces verts qui contiennent tout un éco-système. Même s'ils ne sont pas toujours bien visibles, leurs habitants les plus notables sont bien sûr les oiseaux.  

@@ -1,0 +1,19 @@
+---
+label: Article
+hide_body: false
+fields:
+- type: text
+  name: locale
+  label: locale
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: file
+  name: banner
+  label: banner
+- type: text
+  name: description
+  label: description

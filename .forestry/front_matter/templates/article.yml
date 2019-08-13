@@ -2,18 +2,50 @@
 label: Article
 hide_body: false
 fields:
-- type: text
-  name: locale
-  label: locale
+- name: locale
+  type: select
+  default: []
+  config:
+    required: true
+    options:
+    - fr
+    - en
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Locale
 - type: text
   name: title
-  label: title
+  label: Title
+  config:
+    required: true
+  description: Article main title
 - type: datetime
   name: date
-  label: date
+  label: Date
+  config:
+    required: true
 - type: file
   name: banner
-  label: banner
-- type: text
-  name: description
-  label: description
+  config:
+    maxSize: '10'
+  label: Banner
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Description
+- name: category
+  type: tag_list
+  default: []
+  label: Category
+- name: images
+  type: image_gallery
+  config: {}
+  label: Images

@@ -15,4 +15,4 @@ draft: false
 ---
 Youpi c'est classe
 
-![](/media/DSCF0928.JPG)
+![](/src/media/DSCF1059.JPG)

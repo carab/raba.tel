@@ -10,6 +10,9 @@ images:
 - "/media/DSCF1059.JPG"
 - "/media/DSCF0982.JPG"
 - "/media/DSCF0928.JPG"
+draft: false
 
 ---
 Youpi c'est classe
+
+![](/media/DSCF0928.JPG)

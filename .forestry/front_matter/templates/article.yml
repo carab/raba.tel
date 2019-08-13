@@ -49,3 +49,5 @@ fields:
   type: image_gallery
   config: {}
   label: Images
+pages:
+- src/pages/article/test-article.md

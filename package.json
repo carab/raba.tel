@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "preview": "gatsby develop -p 8080 -H 0.0.0.0",
     "serve": "gatsby serve",
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"

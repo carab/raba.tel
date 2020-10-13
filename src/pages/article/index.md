@@ -1,5 +1,5 @@
 ---
-title: Articles
+title: Blog
 index: true
 navigation:
   weight: 1

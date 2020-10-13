@@ -1,23 +1,23 @@
 ---
 layout: about
-title: About
+title: A propos
 navigation:
   weight: -1
 ---
 
-Hello there!
+Bonjour !
 
-My name is Camille Rabatel, and I am a web engineer from Lyon, France.
+Je suis Camille Rabatel, ingénieur web sur Lyon, photographe et naturaliste amateur.
 
-I have been interested by photography since my younger years, but I really started investing time into it during my 3 years in Brussels, when I was offered a used Nikon D90.
+D'abord passionné par la photographie de paysage, puis urbaine, puis animalière, je suis maintenant entièrement tourné vers la simple observation des animaux dans leur habitat naturel, leur photographie étant reléguée au second plan.
 
-This Nikon really helped me understand photography, but I've now been seduced by the Fuji system and have acquired an X-T1.
+Mon principal objectif aujourd'hui est d'éviter tout dérangement, en respectant l'animal et le lieu, pour permettre une observation des plus authentiques.
 
-You will find on this website my favorite images from various types of photography, along some articles of my different experiences.
+Vous trouverez donc sur ce site quelques unes de mes photos préférées, ainsi que des articles sur mes expériences et mes questionnements.
 
-If you have any questions or requests, please do not hesitate to contact me using the form below. I'll reach back to you as soon as possible.
+Si vous avez des questions ou une requête particulière, n'hésitez pas à me contacter et je vous répondrai dès que possible.
 
-Thank you, and [thanks to them](/thanks).  
+Merci, et [merci à eux](/thanks).  
 Camille.
 
-<contact-form title="Contact me" email="camille@raba.tel" next="/thank-you"></contact-form>
+<contact-form title="Me contacter" email="camille@raba.tel" next="/thank-you"></contact-form>

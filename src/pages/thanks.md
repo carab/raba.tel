@@ -1,8 +1,8 @@
 ---
-title: Thanks
+title: Merci
 ---
 
-To my Luthien, for her daily support.  
-To my Samwise, for his reviewing and advice.  
-To my parents, for their education on how to appreciate the world.  
-To all my friends, victims of my photography.
+Merci à Luthien, pour son support quotidien.  
+Merci à Samsagace, pour ses conseils avisés.  
+Merci à mes parents, pour leur précieuse éducation.  
+Merci à mes amis et ma famille, victimes de ma photographie.

@@ -3,7 +3,7 @@ draft: false
 title: Nature
 date: 2017-08-22T16:00:00+02:00
 banner: photos/forest_light.jpg
-description: Nature photos from here and abroad.
+description: Quelques clichés de la nature proche ou éloignée.
 weight: 3
 navigation:
   weight: 3
@@ -34,4 +34,4 @@ resources:
   src: "photos/moon_sunset.jpg"
 ---
 
-Below are some photos taken from anywhere at anytime, during my trips abroad or just next to the home.
+Quelques clichés de la nature proche ou éloignée.

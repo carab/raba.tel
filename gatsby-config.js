@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'http://camillerabatel.com',
+    siteUrl: 'https://raba.tel',
     title: 'Camille Rabatel',
-    description: "Camille Rabatel's personal photography website",
-    keywords: 'photo, photography, landscape, wildlife, nature, bird, astro',
+    description: "Site de photographie de Camille Rabatel",
+    keywords: 'photo, photograhie, paysage, oiseaux, animalier, photography, landscape, wildlife, nature, bird, astro',
     author: 'Camille Rabatel',
-    locale: 'en',
+    locale: 'fr',
     socials: {
       facebookUrl: '',
       twitterUrl: '',

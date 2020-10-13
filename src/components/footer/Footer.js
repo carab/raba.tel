@@ -16,7 +16,7 @@ export default function Footer({
       </p>
 
       <p className="Footer_credit">
-        Icons made by <br />
+        Icons by <br />
         {/* camera */}
         <a
           href="https://www.flaticon.com/authors/madebyoliver"

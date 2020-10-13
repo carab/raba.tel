@@ -18,7 +18,7 @@ Et plutôt que de répondre à chaque commentaire, il semble préférable de ré
 
 ## Est-ce un montage ?
 
-Cette photo a été prise sur un appareil avec un capteur APS-C, et un télé-objectif de 400mm de longueur focale.
+Cette photo a été prise sur un appareil avec un capteur APS-C, et un télé-objectif de 400mm de longueur focale, à plus de 10km à l'ouest de Lyon.
 
 C'est donc un "gros zoom", qui sert habituellement pour l'animalier, mais qui peut aussi servir pour du paysage ou de l'architecture quand le cadre s'y prète.
 

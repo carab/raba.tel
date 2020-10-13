@@ -6,7 +6,7 @@ banner: photos/001.jpg
 description: Quelques explications sur une photographie qui fait jaser.
 ---
 
-*Non, ce n'est pas un montage.*
+*Non, ceci n'est pas un montage.*
 
 Maintenant que c'est dit, je vais développer un peu, et pour commencer, bref historique.
 

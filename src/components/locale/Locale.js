@@ -1,20 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { addLocaleData, IntlProvider } from 'react-intl'
-import frLocaleData from 'react-intl/locale-data/fr'
+import { IntlProvider } from 'react-intl'
 
 import translations from '../../translations'
 
-addLocaleData(frLocaleData)
-
-export default class Locale extends Component {
-  static propTypes = {
-    locale: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
-  }
-
-  render() {
-    const { children, locale } = this.props
+ function Locale(props) {
+    const { children, locale } = props
     const messages = translations[locale]
 
     return (
@@ -22,5 +13,11 @@ export default class Locale extends Component {
         {children}
       </IntlProvider>
     )
-  }
 }
+
+Locale.propTypes = {
+  locale: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+}
+
+export default Locale

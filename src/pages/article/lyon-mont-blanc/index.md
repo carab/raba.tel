@@ -1,17 +1,16 @@
 ---
 title: Lyon et le Mont Blanc
+description: Quelques explications sur une photographie qui fait jaser.
 date: 2020-10-13T12:00:00+02:00
 banner: upload/001.jpg
-description: Quelques explications sur une photographie qui fait jaser.
 ---
+*Non, ce n'est pas un montage :)*
 
-*Non, ceci n'est pas un montage.*
-
-Maintenant que c'est dit, je vais développer un peu, et pour commencer, bref historique.
+Maintenant, je vais développer un peu, et pour commencer, bref historique !
 
 Début 2018, j'ai publié cette vue du Mont Blanc derrière Fourvière. Depuis, elle a été partagée plusieurs fois par différents promoteurs de Lyon sur les réseaux sociaux, comme *Only Lyon* et *Le Bonbon Lyon*.
 
-A chaque partage reviennent les questionnements sur la *réalité* de la photo, principalement parce qu'il parait impossible que le Mont Blanc soit perçu aussi proche de notre capitale des Gaules, alors que le sommet de l'Europe se trouve à 150km.
+A chaque partage reviennent les questionnements sur la *réalité* de la photo, principalement parce qu'il parait impossible que le Mont Blanc soit perçu aussi proche de notre capitale des Gaules, alors que le sommet de l'Europe se trouve à 150km à l'est
 
 Et plutôt que de répondre à chaque commentaire, il semble préférable de répondre sur ce site, où l'information est moins volatile que sur les réseaux sociaux, et ce en deux points.
 
@@ -19,9 +18,9 @@ Et plutôt que de répondre à chaque commentaire, il semble préférable de ré
 
 Cette photo a été prise sur un appareil avec un capteur APS-C, et un télé-objectif de 400mm de longueur focale, à plus de 10km à l'ouest de Lyon, au coucher de soleil.
 
-C'est donc un "gros zoom", qui sert habituellement pour l'animalier, mais qui peut aussi servir pour du paysage ou de l'architecture quand le cadre s'y prète.
+C'est donc un "gros zoom", qui sert habituellement pour l'animalier, mais qui peut aussi servir pour du paysage ou de l'architecture quand le cadre s'y prête.
 
-En effet, la particularité des télé-objectifs est qu'ils semblent réduire la distance entre les différents plans d'une photo, en "applatissant" la profondeur.
+En effet, la particularité des télé-objectifs est qu'ils semblent réduire la distance entre les différents plans d'une photo, en "aplatissant" la profondeur.
 
 La conséquence est une sorte d'illusion d'optique, où le rapport de taille des éléments sur l'image parait exagéré.
 
@@ -31,11 +30,11 @@ Il suffit d'ailleurs de s'équiper d'une quelconque paire de jumelles pour repro
 
 Quand les touristes se prennent en photo soutenant la Tour de Pise, ce n'est pas un montage non plus, mais simplement une autre application de cet effet.
 
-Quand les photographes prennent la pleine Lune à côté de batiments connus et qu'elle parait énorme, idem.
+Quand les photographes prennent la pleine Lune à côté de bâtiments connus et qu'elle parait énorme, idem.
 
 Quand on cache la Lune avec son propre pouce, idem.
 
-## Est-elle réelle ?
+## Est-ce réel ?
 
 On peut toutefois difficilement considérer cette vue comme réelle, puisque ce n'est pas du tout la vision qu'on a sur place avec nos propres yeux (sauf avec des jumelles donc ;) ).
 
@@ -45,7 +44,7 @@ Maintenant, on pourrait très bien appliquer cela à toutes les photos, peinture
 
 Une photo ne sera donc jamais réelle, il y aura toujours des choix (et des contraintes), artistiques, techniques ou moraux, qui réduiront la réalité du moment mais qui permettront surtout de souligner un aspect spécifique de cette réalité.
 
-Un exemple très actuel réside dans le floutage proposé par les appareils photos des smartphones : n'importe qui peut maintenant faire disparaitre un arrière-plan chargé pour mettre en valeur son sujet, donnant une photo moins réelle mais correspondant plus à l'intention du photographe.
+Un exemple très actuel réside dans le flou proposé par les appareils photos des smartphones : n'importe qui peut maintenant faire disparaitre un arrière-plan chargé pour mettre en valeur son sujet, donnant une photo moins réelle mais correspondant plus à l'intention du photographe.
 
 ## Notes pour la fin
 

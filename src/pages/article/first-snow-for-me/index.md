@@ -1,14 +1,17 @@
 ---
 draft: false
 title: First snow (for me)
+description: A short hike in fresh snow.
 date: 2017-12-14T16:00:00+02:00
 banner: photos/001.jpg
-description: A short hike in fresh snow.
 ---
-
 Sadly, I missed the first snow which fell on the Pilat mounts, next to my home.
 
 As it melted pretty fast, I had to wait for the second snow fall, which fortunately happend on a friday, giving me the opportunity to come see it on saturday.
+
+<photo-list>
+![](315665_2857233.jpg)
+</photo-list>
 
 <photo-list>
 

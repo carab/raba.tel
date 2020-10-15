@@ -39,6 +39,7 @@ export default class ArticleSummary extends Component {
         ) : null}
         <article className="ArticleSummary_description" itemProp="articleBody">
           {description}
+          {description ? ' ' : null}
           <Link className="ArticleSummary_more" to={slug}>
             <FormattedMessage id="article.read_more" />
           </Link>

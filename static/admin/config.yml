@@ -6,6 +6,66 @@ publish_mode: editorial_workflow
 media_folder: 'static/upload'
 public_folder: '/upload'
 collections:
+  - name: 'page'
+    label: 'Pages'
+    files:
+      - label: 'About'
+        name: 'about'
+        file: 'src/pages/about.md'
+        fields:
+          - { label: Title, name: title, widget: string, required: true }
+          - { label: Layout, name: layout, widget: string }
+          - label: 'Navigation'
+            name: 'navigation'
+            collapsed: true
+            widget: 'object'
+            fields:
+              - label: 'Name'
+                name: 'string'
+                widget: 'string'
+                hint: 'When present, this content will be added as an item into navigation bar.'
+                required: false
+              - label: 'Parent'
+                name: 'parent'
+                widget: 'string'
+                hint: 'Name of the parent item under which this item should be listed'
+                required: false
+              - label: 'Weight'
+                name: 'weight'
+                widget: 'number'
+                hint: 'The higher, the first it will be listed in the parent list'
+                required: false
+          - label: 'Body'
+            name: 'body'
+            widget: 'markdown'
+            required: true
+      - label: 'Thank you'
+        name: 'thank-you'
+        file: 'src/pages/thank-you.md'
+        fields:
+          - { label: Title, name: title, widget: string, required: true }
+          - label: 'Body'
+            name: 'body'
+            widget: 'markdown'
+            required: true
+      - label: 'Thanks'
+        name: 'thanks'
+        file: 'src/pages/thanks.md'
+        fields:
+          - { label: Title, name: title, widget: string, required: true }
+          - label: 'Body'
+            name: 'body'
+            widget: 'markdown'
+            required: true
+      - label: '404'
+        name: '404'
+        file: 'src/pages/404.md'
+        fields:
+          - { label: Title, name: title, widget: string, required: true }
+          - label: 'Body'
+            name: 'body'
+            widget: 'markdown'
+            required: true
   - name: 'article' # Used in routes, e.g., /admin/collections/blog
     label: 'Article' # Used in the UI
     folder: 'src/pages/article' # The path to the folder where the documents are stored

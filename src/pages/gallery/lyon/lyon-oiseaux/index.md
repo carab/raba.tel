@@ -1,8 +1,7 @@
 ---
-locale: fr
 title: Oiseaux de Lyon
 date: 2017-08-22T16:00:00+02:00
-banner: etourneausansonnet2.jpg
+banner: upload/etourneausansonnet2.jpg
 description: Oiseaux des parcs et quais de Lyon
 weight: 10
 navigation:
@@ -10,105 +9,105 @@ navigation:
   parent: lyon
 resources:
 - title: "Rouge-gorge"
-  src: rougegorge2.jpg
+  src: upload/rougegorge2.jpg
 - title: "Rouge-gorge"
-  src: rougegorge1.jpg
+  src: upload/rougegorge1.jpg
 - title: "Rouge-gorge"
-  src: rougegorge3.jpg
+  src: upload/rougegorge3.jpg
 - title: "Pic Epeiche"
-  src: picepeiche1.jpg
+  src: upload/picepeiche1.jpg
 - title: "Pic Epeiche"
-  src: picepeiche2.jpg
+  src: upload/picepeiche2.jpg
 - title: "Pic Epeiche"
-  src: picepeiche3.jpg
+  src: upload/picepeiche3.jpg
 - title: "Pic vert"
-  src: picvert1.jpg
+  src: upload/picvert1.jpg
 - title: "Pic vert"
-  src: picvert2.jpg
+  src: upload/picvert2.jpg
 - title: "Pic vert"
-  src: picvert3.jpg
+  src: upload/picvert3.jpg
 - title: "Pie bavarde"
-  src: piebavarde1.jpg
+  src: upload/piebavarde1.jpg
 - title: "Pouillot véloce"
-  src: pouillotveloce1.jpg
+  src: upload/pouillotveloce1.jpg
 - title: "Pouillot véloce"
-  src: pouillotveloce2.jpg
+  src: upload/pouillotveloce2.jpg
 - title: "Sitelle torchepot"
-  src: sitelletorchepot1.jpg
+  src: upload/sitelletorchepot1.jpg
 - title: "Bergeronnette des ruisseaux"
-  src: bergeronnetteruisseaux1.jpg
+  src: upload/bergeronnetteruisseaux1.jpg
 - title: "Canard colvert"
-  src: canardcolvert1.jpg
+  src: upload/canardcolvert1.jpg
 - title: "Chardonneret élégant"
-  src: chardonneretelegant1.jpg
+  src: upload/chardonneretelegant1.jpg
 - title: "Cygne noir (importé)"
-  src: cygnenoir1.jpg
+  src: upload/cygnenoir1.jpg
 - title: "Cygne tuberculé"
-  src: cygnetubercule1.jpg
+  src: upload/cygnetubercule1.jpg
 - title: "Cygne tuberculé"
-  src: cygnetubercule2.jpg
+  src: upload/cygnetubercule2.jpg
 - title: "Etourneau sansonnet"
-  src: etourneausansonnet1.jpg
+  src: upload/etourneausansonnet1.jpg
 - title: "Etourneau sansonnet"
-  src: etourneausansonnet2.jpg
+  src: upload/etourneausansonnet2.jpg
 - title: "Faucon crécerelle"
-  src: fauconcrecerelle1.jpg
+  src: upload/fauconcrecerelle1.jpg
 - title: "Fauvette à tête noire"
-  src: fauvettetetenoire1.jpg
+  src: upload/fauvettetetenoire1.jpg
 - title: "Geai des chênes"
-  src: geaichenes1.jpg
+  src: upload/geaichenes1.jpg
 - title: "Geai des chênes"
-  src: geaichenes2.jpg
+  src: upload/geaichenes2.jpg
 - title: "Grand cormoran"
-  src: grandcormoran1.jpg
+  src: upload/grandcormoran1.jpg
 - title: "Grimpereau des jardins"
-  src: grimpereaujardins1.jpg
+  src: upload/grimpereaujardins1.jpg
 - title: "Grimpereau des jardins"
-  src: grimpereaujardins2.jpg
+  src: upload/grimpereaujardins2.jpg
 - title: "Grimpereau des jardins"
-  src: grimpereaujardins3.jpg
+  src: upload/grimpereaujardins3.jpg
 - title: "Gros-bec casse-noyaux"
-  src: grosbeccassenoyaux1.jpg
+  src: upload/grosbeccassenoyaux1.jpg
 - title: "Héron cendré"
-  src: heroncendre1.jpg
+  src: upload/heroncendre1.jpg
 - title: "Héron cendré"
-  src: heroncendre2.jpg
+  src: upload/heroncendre2.jpg
 - title: "Martin pêcheur d'Europe"
-  src: martinpechereurope1.jpg
+  src: upload/martinpechereurope1.jpg
 - title: "Martin pêcheur d'Europe"
-  src: martinpechereurope2.jpg
+  src: upload/martinpechereurope2.jpg
 - title: "Merle noir"
-  src: merlenoir1.jpg
+  src: upload/merlenoir1.jpg
 - title: "Mésange bleue"
-  src: mesangebleue1.jpg
+  src: upload/mesangebleue1.jpg
 - title: "Mésange bleue"
-  src: mesangebleue2.jpg
+  src: upload/mesangebleue2.jpg
 - title: "Mésange bleue"
-  src: mesangebleue3.jpg
+  src: upload/mesangebleue3.jpg
 - title: "Mésange charbonnière"
-  src: mesangecharbonniere1.jpg
+  src: upload/mesangecharbonniere1.jpg
 - title: "Mésange charbonnière"
-  src: mesangecharbonniere2.jpg
+  src: upload/mesangecharbonniere2.jpg
 - title: "Mésange à longue queue"
-  src: mesangelonguequeue1.jpg
+  src: upload/mesangelonguequeue1.jpg
 - title: "Mésange à longue queue"
-  src: mesangelonguequeue2.jpg
+  src: upload/mesangelonguequeue2.jpg
 - title: "Moineau domestique (mâle)"
-  src: moineaudomestique1.jpg
+  src: upload/moineaudomestique1.jpg
 - title: "Moineau domestique (femelle)"
-  src: moineaudomestique2.jpg
+  src: upload/moineaudomestique2.jpg
 - title: "Mouette rieuse (plumage d'hiver)"
-  src: mouetterieuse1.jpg
+  src: upload/mouetterieuse1.jpg
 - title: "Oie sauvage"
-  src: oiesauvage1.jpg
+  src: upload/oiesauvage1.jpg
 - title: "Oie sauvage"
-  src: oiesauvage2.jpg
+  src: upload/oiesauvage2.jpg
 - title: "Oie sauvage"
-  src: oiesauvage3.jpg
+  src: upload/oiesauvage3.jpg
 - title: "Pélican à dos rosé (semi-domestique)"
-  src: pelicanrose1.jpg
+  src: upload/pelicanrose1.jpg
 - title: "Hérons garde-boeufs"
-  src: herongardeboeufs1.jpg
+  src: upload/herongardeboeufs1.jpg
 ---
 
 Lyon est parsemée de nombreux espaces verts qui contiennent tout un éco-système. Même s'ils ne sont pas toujours bien visibles, leurs habitants les plus notables sont bien sûr les oiseaux.  

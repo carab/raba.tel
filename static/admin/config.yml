@@ -1,0 +1,152 @@
+backend:
+  name: git-gateway
+  branch: master
+  squash_merges: true
+publish_mode: editorial_workflow
+media_folder: 'static/upload'
+public_folder: '/upload'
+collections:
+  - name: 'article' # Used in routes, e.g., /admin/collections/blog
+    label: 'Article' # Used in the UI
+    folder: 'src/pages/article' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: 'index'
+    path: '{{title}}/index'
+    media_folder: 'upload'
+    public_folder: 'upload'
+    editor:
+      preview: false
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    fields: # The fields for each document, usually in front matter
+      - label: 'Locale'
+        name: 'locale'
+        widget: 'select'
+        required: false
+        options:
+          [
+            { label: 'Français', value: 'fr' },
+            { label: 'English', value: 'en' },
+          ]
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+        required: true
+      - label: 'Description'
+        name: 'description'
+        widget: 'string'
+        required: false
+      - label: 'Publish Date'
+        name: 'date'
+        widget: 'datetime'
+        required: true
+      - label: 'Banner'
+        name: 'banner'
+        widget: 'image'
+        required: false
+      - label: 'Navigation'
+        name: 'navigation'
+        collapsed: true
+        widget: 'object'
+        fields:
+          - label: 'Name'
+            name: 'string'
+            widget: 'string'
+            hint: 'When present, this content will be added as an item into navigation bar.'
+            required: false
+          - label: 'Parent'
+            name: 'parent'
+            widget: 'string'
+            hint: 'Name of the parent item under which this item should be listed'
+            required: false
+          - label: 'Weight'
+            name: 'weight'
+            widget: 'number'
+            hint: 'The higher, the first it will be listed in the parent list'
+            required: false
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+        required: true
+  - name: 'gallery' # Used in routes, e.g., /admin/collections/blog
+    label: 'Gallery' # Used in the UI
+    folder: 'src/pages/gallery' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: 'index'
+    path: '{{title}}/index'
+    media_folder: 'upload'
+    public_folder: 'upload'
+    editor:
+      preview: false
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    fields: # The fields for each document, usually in front matter
+      - label: 'Locale'
+        name: 'locale'
+        widget: 'select'
+        required: false
+        options:
+          [
+            { label: 'Français', value: 'fr' },
+            { label: 'English', value: 'en' },
+          ]
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+        required: true
+      - label: 'Description'
+        name: 'description'
+        widget: 'string'
+        required: false
+      - label: 'Publish Date'
+        name: 'date'
+        widget: 'datetime'
+        required: true
+      - label: 'Banner'
+        name: 'banner'
+        widget: 'image'
+        required: false
+      - label: 'Weight'
+        name: 'weight'
+        widget: 'number'
+        hint: 'The higher, the first it will be listed in the parent list'
+        required: false
+      - label: 'Navigation'
+        name: 'navigation'
+        collapsed: true
+        widget: 'object'
+        fields:
+          - label: 'Name'
+            name: 'string'
+            widget: 'string'
+            hint: 'When present, this content will be added as an item into navigation bar.'
+            required: false
+          - label: 'Parent'
+            name: 'parent'
+            widget: 'string'
+            hint: 'Name of the parent item under which this item should be listed'
+            required: false
+          - label: 'Weight'
+            name: 'weight'
+            widget: 'number'
+            hint: 'The higher, the first it will be listed in the parent list'
+            required: false
+      - label: 'Photos'
+        name: 'resources'
+        widget: 'list'
+        collapsed: true
+        summary: '{{fields.title}}'
+        fields:
+          - label: 'Title'
+            name: 'title'
+            widget: 'string'
+            required: true
+          - label: 'Image'
+            name: 'src'
+            widget: 'image'
+            required: true
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+        required: true

@@ -117,7 +117,7 @@ export const galleriesFragment = graphql`
     galleries: allMarkdownRemark(
       filter: {
         fields: { section: { eq: "gallery" }, slug: { regex: $regex } }
-        frontmatter: { draft: { ne: true }, index: { ne: true } }
+        frontmatter: { index: { ne: true } }
       }
       sort: { fields: [frontmatter___weight], order: DESC }
     ) {
@@ -135,7 +135,7 @@ export const articlesFragment = graphql`
     articles: allMarkdownRemark(
       filter: {
         fields: { section: { eq: "article" }, slug: { regex: $regex } }
-        frontmatter: { draft: { ne: true }, index: { ne: true } }
+        frontmatter: { index: { ne: true } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {

@@ -1,8 +1,7 @@
 ---
-draft: false
 title: Lyon et le Mont Blanc
 date: 2020-10-13T12:00:00+02:00
-banner: photos/001.jpg
+banner: upload/001.jpg
 description: Quelques explications sur une photographie qui fait jaser.
 ---
 

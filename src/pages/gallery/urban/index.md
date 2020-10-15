@@ -1,53 +1,52 @@
 ---
-draft: false
 title: Urbain
 date: 2017-08-22T16:00:00+02:00
-banner: photos/009.jpg
+banner: upload/009.jpg
 description: Vues de ville.
 weight: 2
 navigation:
   weight: 2
 resources:
 - title: "Eiffel activity."
-  src: "photos/001.jpg"
+  src: "upload/001.jpg"
 - title: ""
-  src: "photos/002.jpg"
+  src: "upload/002.jpg"
 - title: ""
-  src: "photos/004.jpg"
+  src: "upload/004.jpg"
 - title: ""
-  src: "photos/005.jpg"
+  src: "upload/005.jpg"
 - title: ""
-  src: "photos/006.jpg"
+  src: "upload/006.jpg"
 - title: ""
-  src: "photos/007.jpg"
+  src: "upload/007.jpg"
 - title: ""
-  src: "photos/008.jpg"
+  src: "upload/008.jpg"
 - title: ""
-  src: "photos/009.jpg"
+  src: "upload/009.jpg"
 - title: ""
-  src: "photos/010.jpg"
+  src: "upload/010.jpg"
 - title: ""
-  src: "photos/011.jpg"
+  src: "upload/011.jpg"
 - title: ""
-  src: "photos/012.jpg"
+  src: "upload/012.jpg"
 - title: ""
-  src: "photos/013.jpg"
+  src: "upload/013.jpg"
 - title: ""
-  src: "photos/014.jpg"
+  src: "upload/014.jpg"
 - title: ""
-  src: "photos/016.jpg"
+  src: "upload/016.jpg"
 - title: ""
-  src: "photos/017.jpg"
+  src: "upload/017.jpg"
 - title: ""
-  src: "photos/018.jpg"
+  src: "upload/018.jpg"
 - title: ""
-  src: "photos/021.jpg"
+  src: "upload/021.jpg"
 - title: ""
-  src: "photos/022.jpg"
+  src: "upload/022.jpg"
 - title: ""
-  src: "photos/023.jpg"
+  src: "upload/023.jpg"
 - title: ""
-  src: "photos/024.jpg"
+  src: "upload/024.jpg"
 
 ---
 

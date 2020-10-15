@@ -1,8 +1,8 @@
 ---
-draft: false
+locale: en
 title: Launching the site
 date: 2017-08-22T15:00:00+02:00
-banner: photos/001.jpg
+banner: upload/001.jpg
 description: My personal site is live !
 ---
 

@@ -37,17 +37,12 @@ export default class ArticleSummary extends Component {
             <Photo {...banner.childImageSharp} alt={title} />
           </Link>
         ) : null}
-        {description ? (
-          <article
-            className="ArticleSummary_description"
-            itemProp="articleBody"
-          >
-            {description + ' '}
-            <Link className="ArticleSummary_more" to={slug}>
-              <FormattedMessage id="article.read_more" />
-            </Link>
-          </article>
-        ) : null}
+        <article className="ArticleSummary_description" itemProp="articleBody">
+          {description}
+          <Link className="ArticleSummary_more" to={slug}>
+            <FormattedMessage id="article.read_more" />
+          </Link>
+        </article>
       </section>
     )
   }

@@ -16,7 +16,6 @@ export default class Navigation extends Component {
             allMarkdownRemark(
               filter: {
                 frontmatter: {
-                  draft: { ne: true }
                   navigation: { weight: { ne: null } }
                 }
               }

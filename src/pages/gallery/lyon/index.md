@@ -1,5 +1,4 @@
 ---
-locale: fr
 title: Lyon
 index: true
 navigation:

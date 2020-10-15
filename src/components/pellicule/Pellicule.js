@@ -10,6 +10,8 @@ export default class Pellicule extends Component {
   }
 }
 
+Pellicule.displayName = 'Pellicule'
+
 Pellicule.propTypes = {
   children: PropTypes.node.isRequired,
 }

@@ -92,7 +92,7 @@ module.exports = {
                 limit: 1000,
                 sort: { order: DESC, fields: [frontmatter___date] },
                 filter: {
-                  frontmatter: { draft: { ne: true }, index: { ne: true } }
+                  frontmatter: { index: { ne: true } }
                   fields: { section: { eq: "article" } }
                 }
               ) {
@@ -117,5 +117,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/admin/index.js`,
+      },
+    },
   ],
 }

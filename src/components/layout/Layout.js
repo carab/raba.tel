@@ -51,7 +51,7 @@ export default class Layout extends Component {
               <meta name="author" content={site.author} />
               <meta name="keywords" content={site.keywords} />
               <link rel="canonical" href={location.pathname} />
-              <meta property="og:locale" content={site.locale} />
+              <meta property="og:locale" content={locale} />
               <meta property="og:title" content={title ? title : site.title} />
               <meta
                 property="og:description"

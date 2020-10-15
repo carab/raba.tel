@@ -1,6 +1,6 @@
 ---
 title: Lyon et le Mont Blanc
-description: Quelques explications sur une photographie qui fait jaser.
+description: Quelques explications sur une photographie qui fait parler d'elle.
 date: 2020-10-13T12:00:00+02:00
 banner: upload/001.jpg
 ---

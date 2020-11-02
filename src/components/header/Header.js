@@ -57,7 +57,7 @@ function Header(props) {
         <div className="Header_nav" aria-hidden={!toggled} ref={navRef}>
           {children}
         </div>
-        <div className="Header_socials">
+        <div className="Header_actions">
           {facebookUrl ? (
             <a
               href={facebookUrl}
@@ -85,22 +85,23 @@ function Header(props) {
               <Icon name="instagram" />
             </a>
           ) : null}
-          <button
-            type="button"
-            className="Header_navShare"
-            onClick={handleShare}
-            title={intl.formatMessage({
-              id: canShare ? 'socials.share.label' : 'socials.copy.label',
-            })}
-            aria-label={intl.formatMessage({
-              id: canShare ? 'socials.share.label' : 'socials.copy.label',
-            })}
-          >
-            <Icon name="share" />
-            <span className="Header_navCopied" aria-hidden={copied}>
+          <span className="Header_socialShare">
+            <button
+              type="button"
+              onClick={handleShare}
+              title={intl.formatMessage({
+                id: canShare ? 'socials.share.label' : 'socials.copy.label',
+              })}
+              aria-label={intl.formatMessage({
+                id: canShare ? 'socials.share.label' : 'socials.copy.label',
+              })}
+            >
+              <Icon name="share" />
+            </button>
+            <span className="Header_socialCopied" aria-hidden={copied}>
               {intl.formatMessage({ id: 'socials.copy.copied' })}
             </span>
-          </button>
+          </span>
           <button
             type="button"
             className="Header_navToggle"

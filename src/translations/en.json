@@ -7,5 +7,11 @@
     "studio.close": "Close",
     "studio.previous": "Previous",
     "studio.next": "Next",
+    "socials.facebook.label": "My Facebook page",
+    "socials.twitter.label": "My Twitter account",
+    "socials.instagram.label": "My Instagram account",
+    "socials.share.label": "Share this page",
+    "socials.copy.label": "Copy this page link",
+    "socials.copy.copied": "The link is copied!",
     "header.open": "Open navigation"
 }

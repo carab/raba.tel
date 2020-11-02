@@ -12,6 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "browser-monads": "^1.0.0",
     "date-fns": "^2.16.1",
     "gatsby": "^2.24.75",
     "gatsby-image": "^2.4.21",
@@ -39,7 +40,7 @@
     "react-event-listener": "^0.6.6",
     "react-hammerjs": "^1.0.1",
     "react-helmet": "^5.2.1",
-    "react-intl": "^5.8.6",
+    "react-intl": "^5.8.8",
     "rehype-react": "^3.0.3"
   },
   "keywords": [

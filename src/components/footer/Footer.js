@@ -69,6 +69,10 @@ export default function Footer({
         <a href="https://www.flaticon.com/authors/lyolya" title="Lyolya">
           Lyolya
         </a>{' '}
+        {/* share */}{' '}
+        <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">
+          Pixel perfect
+        </a>{' '}
         ,{/* hamburger */} and{' '}
         <a
           href="https://www.flaticon.com/authors/chris-veigt"

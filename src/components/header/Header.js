@@ -1,126 +1,189 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import EventListener from 'react-event-listener'
+import { window } from 'browser-monads'
 
-import withTranslations from '../../hoc/withTranslations'
 import Icon from '../icon/Icon'
 
 import './Header.css'
+import { useIntl } from 'react-intl'
 
-export default withTranslations({
-  open: 'header.open',
-})(
-  class Header extends Component {
-    state = {
-      toggled: false,
-      sticked: false,
-    }
+function Header(props) {
+  const intl = useIntl()
 
-    static propTypes = {
-      title: PropTypes.string.isRequired,
-      socials: PropTypes.object.isRequired,
-      translations: PropTypes.object.isRequired,
-      children: PropTypes.node,
-    }
+  const {
+    title,
+    children,
+    socials: { facebookUrl, twitterUrl, instagramUrl },
+  } = props
 
-    render() {
-      const {
-        title,
-        children,
-        socials: { facebookUrl, twitterUrl, instagramUrl },
-        translations,
-      } = this.props
-      const { toggled, sticked } = this.state
+  const [toggled, setToggled] = useState(false)
+  const [sticked, setSticked] = useState(false)
+  const [copied, setCopied] = useState(false)
 
-      return (
-        <header className={`Header ${sticked ? 'Header-sticked' : ''}`}>
-          <EventListener
-            target="document"
-            onKeyup={this.handleKeyUp}
-            onClick={this.handleClickOutside}
-            onScroll={this.handleScroll}
-          />
-          <div className="Header_bar">
-            <div className="Header_logo">
-              <Link to="/">{title}</Link>
-            </div>
-            <div
-              className="Header_nav"
-              aria-hidden={!toggled}
-              ref={ref => (this.navRef = ref)}
+  // Automatically hidden the copied message after 3 seconds
+  useEffect(
+    () => {
+      if (copied) {
+        const timeout = window.setTimeout(() => {
+          setCopied(false)
+        }, 3000)
+
+        return () => {
+          window.clearTimeout(timeout)
+        }
+      }
+    },
+    [copied]
+  )
+
+  const navRef = useRef()
+  const buttonRef = useRef()
+  const canShare = Boolean(window.navigator.share)
+
+  return (
+    <header className={`Header ${sticked ? 'Header-sticked' : ''}`}>
+      <EventListener
+        target="document"
+        onKeyup={handleKeyUp}
+        onClick={handleClickOutside}
+        onScroll={handleScroll}
+      />
+      <div className="Header_bar">
+        <div className="Header_logo">
+          <Link to="/">{title}</Link>
+        </div>
+        <div className="Header_nav" aria-hidden={!toggled} ref={navRef}>
+          {children}
+        </div>
+        <div className="Header_socials">
+          {facebookUrl ? (
+            <a
+              href={facebookUrl}
+              title="Facebook"
+              aria-label={intl.formatMessage({ id: 'socials.facebook.label' })}
             >
-              {children}
-            </div>
-            <div className="Header_socials">
-              {facebookUrl ? (
-                <a href={facebookUrl} title="Facebook">
-                  <Icon name="facebook" />
-                </a>
-              ) : null}
-              {twitterUrl ? (
-                <a href={twitterUrl} title="Twitter">
-                  <Icon name="twitter" />
-                </a>
-              ) : null}
-              {instagramUrl ? (
-                <a href={instagramUrl} title="Instagram">
-                  <Icon name="instagram" />
-                </a>
-              ) : null}
-              <button
-                type="button"
-                className="Header_navToggle"
-                onClick={this.handleClick}
-                ref={ref => (this.buttonRef = ref)}
-                title={translations.open()}
-              >
-                <Icon name="hamburger" />
-              </button>
-            </div>
-          </div>
-        </header>
+              <Icon name="facebook" />
+            </a>
+          ) : null}
+          {twitterUrl ? (
+            <a
+              href={twitterUrl}
+              title="Twitter"
+              aria-label={intl.formatMessage({ id: 'socials.twitter.label' })}
+            >
+              <Icon name="twitter" />
+            </a>
+          ) : null}
+          {instagramUrl ? (
+            <a
+              href={instagramUrl}
+              title="Instagram"
+              aria-label={intl.formatMessage({ id: 'socials.instagram.label' })}
+            >
+              <Icon name="instagram" />
+            </a>
+          ) : null}
+          <button
+            type="button"
+            className="Header_navShare"
+            onClick={handleShare}
+            title={intl.formatMessage({
+              id: canShare ? 'socials.share.label' : 'socials.copy.label',
+            })}
+            aria-label={intl.formatMessage({
+              id: canShare ? 'socials.share.label' : 'socials.copy.label',
+            })}
+          >
+            <Icon name="share" />
+            <span className="Header_navCopied" aria-hidden={copied}>
+              {intl.formatMessage({ id: 'socials.copy.copied' })}
+            </span>
+          </button>
+          <button
+            type="button"
+            className="Header_navToggle"
+            onClick={handleClick}
+            ref={navRef}
+            title={intl.formatMessage({ id: 'header.open' })}
+          >
+            <Icon name="hamburger" />
+          </button>
+        </div>
+      </div>
+    </header>
+  )
+
+  function handleShare() {
+    const canonicalElement = window.document.querySelector(
+      'link[rel="canonical"]'
+    )
+    const url = canonicalElement
+      ? canonicalElement.getAttribute('href')
+      : window.document.location.href
+
+    if (window.navigator.share) {
+      // Use Webshare API if supported
+      const titleElement = window.document.querySelector('title')
+      const title = titleElement ? titleElement.textContent : undefined
+      const descriptionElement = window.document.querySelector(
+        'meta[name="description"]'
       )
-    }
+      const text = descriptionElement
+        ? descriptionElement.getAttribute('content')
+        : undefined
 
-    handleClick = () => {
-      this.setState({
-        toggled: !this.state.toggled,
+      window.navigator.share({
+        title,
+        text,
+        url,
       })
-    }
-
-    handleClickOutside = event => {
-      if (
-        this.navRef &&
-        this.buttonRef &&
-        !this.navRef.contains(event.target) &&
-        !this.buttonRef.contains(event.target)
-      ) {
-        this.setState({
-          toggled: false,
-        })
-      }
-    }
-
-    handleScroll = event => {
-      const document = event.target
-
-      const distance =
-        document.scrollTop ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop
-
-      this.setState({
-        sticked: 0 < distance,
-      })
-    }
-
-    handleKeyUp = event => {
-      if (27 === event.keyCode) {
-        this.setState({
-          toggled: false,
-        })
-      }
+    } else {
+      // Fallback on copying the URL and make sure URL is absolute
+      const absoluteUrl = new window.URL(url, window.document.baseURI).href
+      window.navigator.clipboard.writeText(absoluteUrl)
+      setCopied(true)
     }
   }
-)
+
+  function handleClick() {
+    setToggled(toggled => !toggled)
+  }
+
+  function handleClickOutside(event) {
+    if (
+      navRef.current &&
+      buttonRef.current &&
+      !navRef.current.contains(event.target) &&
+      !buttonRef.current.contains(event.target)
+    ) {
+      setToggled(false)
+    }
+  }
+
+  function handleScroll(event) {
+    const document = event.target
+
+    const distance =
+      document.scrollTop ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop
+
+    setSticked(0 < distance)
+  }
+
+  function handleKeyUp(event) {
+    if (27 === event.keyCode) {
+      setToggled(false)
+    }
+  }
+}
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+  socials: PropTypes.object.isRequired,
+  children: PropTypes.node,
+}
+
+export default Header
